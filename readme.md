@@ -1,12 +1,21 @@
-## Fly_GpGpu 通用并行计算
+## Fly_GpGpu 通用并行计算（简单方便）
 
 支持 WINDOW，LINUX，MAC，IOS，Android平台
 
+### 目录结构
 
+-fly   主程序库
+-fly_demo Demo例子
+-platform 
+    -window window 工程
+    -mac       mac 工程
+    -ios         ios 工程
+
+ 
 
 使用方法：
 
-```
+```c++
  int type = 0;
     if (argc >= 2)
     {
