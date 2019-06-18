@@ -5,11 +5,16 @@
 ### 目录结构
 
 -fly   主程序库
+
 -fly_demo Demo例子
+
 -platform 
-    -window window 工程
-    -mac       mac 工程
-    -ios         ios 工程
+
+​    -window window 工程
+
+​    -mac       mac 工程
+
+​    -ios         ios 工程
 
  
 
