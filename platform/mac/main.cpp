@@ -29,12 +29,12 @@ int main(int argc, char** argv)
     switch (type) {
       
         case 0:
-            kernel_file = "/Users/qiruisun/github/fly_gpgpu/fly_demo/demo1/opencl_kernel.cl";
+            kernel_file = "/Users/qiruisun/github/fly_gpgpu2/fly_demo/demo1/opencl_kernel.cl";
             kernel_type = fly::ComputeAPI::OpenCL;
             kernel_function = "vectorAddition";
             break;
         case 1:
-            kernel_file = "/Users/qiruisun/github/fly_gpgpu/fly_demo/demo1/vulkan_kernel.glsl";
+            kernel_file = "/Users/qiruisun/github/fly_gpgpu2/fly_demo/demo1/vulkan_kernel.glsl";
             kernel_type = fly::ComputeAPI::Vulkan;
             kernel_function = "main";
             break;
