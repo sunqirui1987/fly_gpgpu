@@ -5,15 +5,7 @@
 #include "tuner_api.h"
 #include "tuner_core.h"
 
-// Stop conditions
-#include "fly/api/stop_condition/configuration_duration.h"
-#include "fly/api/stop_condition/configuration_count.h"
-#include "fly/api/stop_condition/configuration_fraction.h"
-#include "fly/api/stop_condition/tuning_duration.h"
 
-
-// Reference class interface
-#include "fly/api/reference_class.h"
 
 
 namespace fly

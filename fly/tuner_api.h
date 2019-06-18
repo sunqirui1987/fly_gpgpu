@@ -39,6 +39,17 @@
 #include "fly/api/platform_info.h"
 
 
+// Stop conditions
+#include "fly/api/stop_condition/configuration_duration.h"
+#include "fly/api/stop_condition/configuration_count.h"
+#include "fly/api/stop_condition/configuration_fraction.h"
+#include "fly/api/stop_condition/tuning_duration.h"
+
+
+// Reference class interface
+#include "fly/api/reference_class.h"
+
+
 // Tuning manipulator interface
 #include "fly/api/tuning_manipulator.h"
 
