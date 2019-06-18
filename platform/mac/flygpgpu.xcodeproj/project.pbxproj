@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		960E4E2C22B797CE007CC8F7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 960E4E2B22B797CD007CC8F7 /* main.cpp */; };
+		96574FFA228E8AB7008CC2A7 /* running_kernel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96574FF8228E8AB7008CC2A7 /* running_kernel.cpp */; };
+		96B2D9E022B36AC000D1C8E9 /* libMoltenVKSPIRVToMSLConverter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B2D9DD22B36AC000D1C8E9 /* libMoltenVKSPIRVToMSLConverter.a */; };
+		96B2D9E122B36AC000D1C8E9 /* libMoltenVK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B2D9DE22B36AC000D1C8E9 /* libMoltenVK.a */; };
+		96B2D9E222B36AC000D1C8E9 /* libMoltenVKGLSLToSPIRVConverter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B2D9DF22B36AC000D1C8E9 /* libMoltenVKGLSLToSPIRVConverter.a */; };
+		96B2D9ED22B37DED00D1C8E9 /* opencl_kernel.cl in Sources */ = {isa = PBXBuildFile; fileRef = 96B2D9EB22B37DED00D1C8E9 /* opencl_kernel.cl */; };
+		96EED42D228177EC00FA0974 /* libflygpgpu_lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EED23E2276FA5500FA0974 /* libflygpgpu_lib.a */; };
+		96EED43A2281837C00FA0974 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EED4392281837C00FA0974 /* Metal.framework */; };
+		96EED43D228183C000FA0974 /* MetalPerformanceShaders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EED43B228183BF00FA0974 /* MetalPerformanceShaders.framework */; };
+		96EED43E228183C000FA0974 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EED43C228183BF00FA0974 /* MetalKit.framework */; };
+		96EED440228184E000FA0974 /* libobjc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EED43F228184E000FA0974 /* libobjc.tbd */; };
+		96EED442228184FB00FA0974 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EED441228184FB00FA0974 /* Foundation.framework */; };
+		96EED4482281859B00FA0974 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EED4472281859B00FA0974 /* QuartzCore.framework */; };
+		96EED44B228185BA00FA0974 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EED449228185BA00FA0974 /* IOKit.framework */; };
+		96EED44C228185BA00FA0974 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EED44A228185BA00FA0974 /* IOSurface.framework */; };
+		96EED44E228185DE00FA0974 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EED44D228185DE00FA0974 /* AppKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96EED23D2276FA5500FA0974 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96EED2392276FA5500FA0974 /* flygpgpu_lib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 96EED22B2276F9C600FA0974;
+			remoteInfo = flygpgpu_lib;
+		};
+		96EED428228174F600FA0974 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96EED2392276FA5500FA0974 /* flygpgpu_lib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 96EED22A2276F9C600FA0974;
+			remoteInfo = flygpgpu_lib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		96EED2162276F96400FA0974 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		960E4E2B22B797CD007CC8F7 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		96574FF8228E8AB7008CC2A7 /* running_kernel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = running_kernel.cpp; sourceTree = "<group>"; };
+		96574FF9228E8AB7008CC2A7 /* vulkan_kernel.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vulkan_kernel.glsl; sourceTree = "<group>"; };
+		96574FFB228E8AE4008CC2A7 /* demo1.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = demo1.hpp; sourceTree = "<group>"; };
+		96B2D9DD22B36AC000D1C8E9 /* libMoltenVKSPIRVToMSLConverter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMoltenVKSPIRVToMSLConverter.a; path = ../../thirdpart/macOS/libMoltenVKSPIRVToMSLConverter.a; sourceTree = "<group>"; };
+		96B2D9DE22B36AC000D1C8E9 /* libMoltenVK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMoltenVK.a; path = ../../thirdpart/macOS/libMoltenVK.a; sourceTree = "<group>"; };
+		96B2D9DF22B36AC000D1C8E9 /* libMoltenVKGLSLToSPIRVConverter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMoltenVKGLSLToSPIRVConverter.a; path = ../../thirdpart/macOS/libMoltenVKGLSLToSPIRVConverter.a; sourceTree = "<group>"; };
+		96B2D9EB22B37DED00D1C8E9 /* opencl_kernel.cl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.opencl; path = opencl_kernel.cl; sourceTree = "<group>"; };
+		96EED2182276F96400FA0974 /* flygpgpu */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = flygpgpu; sourceTree = BUILT_PRODUCTS_DIR; };
+		96EED2392276FA5500FA0974 /* flygpgpu_lib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = flygpgpu_lib.xcodeproj; sourceTree = "<group>"; };
+		96EED434228182DD00FA0974 /* libMoltenVK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMoltenVK.a; path = ../../thirdpart/macOS/static/libMoltenVK.a; sourceTree = "<group>"; };
+		96EED4392281837C00FA0974 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		96EED43B228183BF00FA0974 /* MetalPerformanceShaders.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalPerformanceShaders.framework; path = System/Library/Frameworks/MetalPerformanceShaders.framework; sourceTree = SDKROOT; };
+		96EED43C228183BF00FA0974 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		96EED43F228184E000FA0974 /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = usr/lib/libobjc.tbd; sourceTree = SDKROOT; };
+		96EED441228184FB00FA0974 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		96EED4432281850900FA0974 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		96EED4452281852100FA0974 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		96EED4472281859B00FA0974 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		96EED449228185BA00FA0974 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		96EED44A228185BA00FA0974 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
+		96EED44D228185DE00FA0974 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96EED2152276F96400FA0974 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96B2D9E022B36AC000D1C8E9 /* libMoltenVKSPIRVToMSLConverter.a in Frameworks */,
+				96B2D9E122B36AC000D1C8E9 /* libMoltenVK.a in Frameworks */,
+				96B2D9E222B36AC000D1C8E9 /* libMoltenVKGLSLToSPIRVConverter.a in Frameworks */,
+				96EED44E228185DE00FA0974 /* AppKit.framework in Frameworks */,
+				96EED44B228185BA00FA0974 /* IOKit.framework in Frameworks */,
+				96EED44C228185BA00FA0974 /* IOSurface.framework in Frameworks */,
+				96EED4482281859B00FA0974 /* QuartzCore.framework in Frameworks */,
+				96EED442228184FB00FA0974 /* Foundation.framework in Frameworks */,
+				96EED440228184E000FA0974 /* libobjc.tbd in Frameworks */,
+				96EED43D228183C000FA0974 /* MetalPerformanceShaders.framework in Frameworks */,
+				96EED43E228183C000FA0974 /* MetalKit.framework in Frameworks */,
+				96EED43A2281837C00FA0974 /* Metal.framework in Frameworks */,
+				96EED42D228177EC00FA0974 /* libflygpgpu_lib.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		96574FF7228E8A86008CC2A7 /* demo1 */ = {
+			isa = PBXGroup;
+			children = (
+				96B2D9EB22B37DED00D1C8E9 /* opencl_kernel.cl */,
+				96574FF8228E8AB7008CC2A7 /* running_kernel.cpp */,
+				96574FF9228E8AB7008CC2A7 /* vulkan_kernel.glsl */,
+				96574FFB228E8AE4008CC2A7 /* demo1.hpp */,
+			);
+			path = demo1;
+			sourceTree = "<group>";
+		};
+		96EED20F2276F96400FA0974 = {
+			isa = PBXGroup;
+			children = (
+				96EED2392276FA5500FA0974 /* flygpgpu_lib.xcodeproj */,
+				96EED425228174DB00FA0974 /* fly_demo */,
+				960E4E2B22B797CD007CC8F7 /* main.cpp */,
+				96EED2192276F96400FA0974 /* Products */,
+				96EED42A2281752800FA0974 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		96EED2192276F96400FA0974 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96EED2182276F96400FA0974 /* flygpgpu */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96EED23A2276FA5500FA0974 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96EED23E2276FA5500FA0974 /* libflygpgpu_lib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96EED425228174DB00FA0974 /* fly_demo */ = {
+			isa = PBXGroup;
+			children = (
+				96574FF7228E8A86008CC2A7 /* demo1 */,
+			);
+			name = fly_demo;
+			path = ../../fly_demo;
+			sourceTree = "<group>";
+		};
+		96EED42A2281752800FA0974 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96B2D9DE22B36AC000D1C8E9 /* libMoltenVK.a */,
+				96B2D9DF22B36AC000D1C8E9 /* libMoltenVKGLSLToSPIRVConverter.a */,
+				96B2D9DD22B36AC000D1C8E9 /* libMoltenVKSPIRVToMSLConverter.a */,
+				96EED44D228185DE00FA0974 /* AppKit.framework */,
+				96EED449228185BA00FA0974 /* IOKit.framework */,
+				96EED44A228185BA00FA0974 /* IOSurface.framework */,
+				96EED4472281859B00FA0974 /* QuartzCore.framework */,
+				96EED4452281852100FA0974 /* AVKit.framework */,
+				96EED4432281850900FA0974 /* AVFoundation.framework */,
+				96EED441228184FB00FA0974 /* Foundation.framework */,
+				96EED43F228184E000FA0974 /* libobjc.tbd */,
+				96EED43C228183BF00FA0974 /* MetalKit.framework */,
+				96EED43B228183BF00FA0974 /* MetalPerformanceShaders.framework */,
+				96EED4392281837C00FA0974 /* Metal.framework */,
+				96EED434228182DD00FA0974 /* libMoltenVK.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96EED2172276F96400FA0974 /* flygpgpu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96EED21F2276F96400FA0974 /* Build configuration list for PBXNativeTarget "flygpgpu" */;
+			buildPhases = (
+				96EED2142276F96400FA0974 /* Sources */,
+				96EED2152276F96400FA0974 /* Frameworks */,
+				96EED2162276F96400FA0974 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96EED429228174F600FA0974 /* PBXTargetDependency */,
+			);
+			name = flygpgpu;
+			productName = flygpgpu;
+			productReference = 96EED2182276F96400FA0974 /* flygpgpu */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96EED2102276F96400FA0974 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = detu;
+				TargetAttributes = {
+					96EED2172276F96400FA0974 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 96EED2132276F96400FA0974 /* Build configuration list for PBXProject "flygpgpu" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 96EED20F2276F96400FA0974;
+			productRefGroup = 96EED2192276F96400FA0974 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 96EED23A2276FA5500FA0974 /* Products */;
+					ProjectRef = 96EED2392276FA5500FA0974 /* flygpgpu_lib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				96EED2172276F96400FA0974 /* flygpgpu */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		96EED23E2276FA5500FA0974 /* libflygpgpu_lib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libflygpgpu_lib.a;
+			remoteRef = 96EED23D2276FA5500FA0974 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96EED2142276F96400FA0974 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96574FFA228E8AB7008CC2A7 /* running_kernel.cpp in Sources */,
+				96B2D9ED22B37DED00D1C8E9 /* opencl_kernel.cl in Sources */,
+				960E4E2C22B797CE007CC8F7 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96EED429228174F600FA0974 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = flygpgpu_lib;
+			targetProxy = 96EED428228174F600FA0974 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		96EED21D2276F96400FA0974 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		96EED21E2276F96400FA0974 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		96EED2202276F96400FA0974 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = ../../;
+				LIBRARY_SEARCH_PATHS = ../../thirdpart/macOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		96EED2212276F96400FA0974 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = ../../;
+				LIBRARY_SEARCH_PATHS = ../../thirdpart/macOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96EED2132276F96400FA0974 /* Build configuration list for PBXProject "flygpgpu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96EED21D2276F96400FA0974 /* Debug */,
+				96EED21E2276F96400FA0974 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96EED21F2276F96400FA0974 /* Build configuration list for PBXNativeTarget "flygpgpu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96EED2202276F96400FA0974 /* Debug */,
+				96EED2212276F96400FA0974 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96EED2102276F96400FA0974 /* Project object */;
+}

@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="fly">
+      <UniqueIdentifier>{6117c086-1dcb-4047-8405-7eec6511c0fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\api">
+      <UniqueIdentifier>{6150b376-d424-45c2-a703-9bcde11f43fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\api\stop_condition">
+      <UniqueIdentifier>{16f0cf9e-0b0c-4887-8515-0d35581128e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\compute_engine">
+      <UniqueIdentifier>{6e9f2655-5854-4a25-985a-7d7667e09fc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\compute_engine\cuda">
+      <UniqueIdentifier>{e509af60-7a25-4547-bbdd-724996358720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\compute_engine\opencl">
+      <UniqueIdentifier>{7d4864c8-765c-4703-8496-b4de0b2a8939}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\compute_engine\vulkan">
+      <UniqueIdentifier>{eb94584e-0527-4237-8e0c-b0f8d1792a69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\compute_engine\vulkan\shaderc_fly">
+      <UniqueIdentifier>{797dd394-4caa-421e-953f-5a264fe2e3b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\dto">
+      <UniqueIdentifier>{b88cf530-77cd-4a1d-873f-b51b1527a12e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\enum">
+      <UniqueIdentifier>{ee42845c-5d13-457f-98e0-28ccf3caddec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\kernel">
+      <UniqueIdentifier>{8c4d477f-6780-4aec-a810-b860ac1096b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\kernel_argument">
+      <UniqueIdentifier>{1afb9833-25a5-42e9-ba2c-668c9173238f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\tuning_runner">
+      <UniqueIdentifier>{bed2e75c-4cfe-452a-8f6b-ef12a53a4721}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\tuning_runner\searcher">
+      <UniqueIdentifier>{841f150b-eb14-41b2-a8e5-b0cfba6af748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fly\utility">
+      <UniqueIdentifier>{c19a0d57-96e0-4519-bcab-d27cf1997531}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\fly\api\computation_result.cpp">
+      <Filter>fly\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\api\device_info.cpp">
+      <Filter>fly\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\api\dimension_vector.cpp">
+      <Filter>fly\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\api\kernel_profiling_counter.cpp">
+      <Filter>fly\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\api\kernel_profiling_data.cpp">
+      <Filter>fly\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\api\output_descriptor.cpp">
+      <Filter>fly\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\api\parameter_pair.cpp">
+      <Filter>fly\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\api\platform_info.cpp">
+      <Filter>fly\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\api\tuning_manipulator.cpp">
+      <Filter>fly\api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\tuner_api.cpp">
+      <Filter>fly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\tuner_core.cpp">
+      <Filter>fly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\compute_engine\cuda\cuda_engine.cpp">
+      <Filter>fly\compute_engine\cuda</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\compute_engine\cuda\cuda_utility.cpp">
+      <Filter>fly\compute_engine\cuda</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\compute_engine\opencl\opencl_engine.cpp">
+      <Filter>fly\compute_engine\opencl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\compute_engine\opencl\opencl_utility.cpp">
+      <Filter>fly\compute_engine\opencl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\compute_engine\vulkan\vulkan_engine.cpp">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\compute_engine\vulkan\vulkan_utility.cpp">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\compute_engine\vulkan\shaderc_fly\shaderrc_fly.cpp">
+      <Filter>fly\compute_engine\vulkan\shaderc_fly</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\dto\kernel_runtime_data.cpp">
+      <Filter>fly\dto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\dto\local_memory_modifier.cpp">
+      <Filter>fly\dto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\dto\kernel_result.cpp">
+      <Filter>fly\dto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\kernel\kernel_configuration.cpp">
+      <Filter>fly\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\kernel\kernel_constraint.cpp">
+      <Filter>fly\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\kernel\kernel_manager.cpp">
+      <Filter>fly\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\kernel\kernel_parameter.cpp">
+      <Filter>fly\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\kernel\kernel_parameter_pack.cpp">
+      <Filter>fly\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\kernel\kernel.cpp">
+      <Filter>fly\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\kernel\kernel_composition.cpp">
+      <Filter>fly\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\kernel_argument\argument_manager.cpp">
+      <Filter>fly\kernel_argument</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\kernel_argument\kernel_argument.cpp">
+      <Filter>fly\kernel_argument</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\tuning_runner\configuration_manager.cpp">
+      <Filter>fly\tuning_runner</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\tuning_runner\configuration_storage.cpp">
+      <Filter>fly\tuning_runner</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\tuning_runner\kernel_runner.cpp">
+      <Filter>fly\tuning_runner</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\tuning_runner\manipulator_interface_implementation.cpp">
+      <Filter>fly\tuning_runner</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\tuning_runner\result_validator.cpp">
+      <Filter>fly\tuning_runner</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\tuning_runner\tuning_runner.cpp">
+      <Filter>fly\tuning_runner</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\utility\result_loader.cpp">
+      <Filter>fly\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\utility\result_printer.cpp">
+      <Filter>fly\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\utility\timer.cpp">
+      <Filter>fly\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\utility\fly_utility.cpp">
+      <Filter>fly\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\fly\utility\logger.cpp">
+      <Filter>fly\utility</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\fly\api\computation_result.h">
+      <Filter>fly\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\device_info.h">
+      <Filter>fly\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\dimension_vector.h">
+      <Filter>fly\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\kernel_profiling_counter.h">
+      <Filter>fly\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\kernel_profiling_data.h">
+      <Filter>fly\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\output_descriptor.h">
+      <Filter>fly\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\parameter_pair.h">
+      <Filter>fly\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\platform_info.h">
+      <Filter>fly\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\reference_class.h">
+      <Filter>fly\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\tuning_manipulator.h">
+      <Filter>fly\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\stop_condition\configuration_duration.h">
+      <Filter>fly\api\stop_condition</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\stop_condition\configuration_fraction.h">
+      <Filter>fly\api\stop_condition</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\stop_condition\stop_condition.h">
+      <Filter>fly\api\stop_condition</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\stop_condition\tuning_duration.h">
+      <Filter>fly\api\stop_condition</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\api\stop_condition\configuration_count.h">
+      <Filter>fly\api\stop_condition</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\fly_platform.hpp">
+      <Filter>fly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\fly_types.hpp">
+      <Filter>fly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\half.hpp">
+      <Filter>fly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuner_api.hpp">
+      <Filter>fly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuner_core.hpp">
+      <Filter>fly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\compute_engine.h">
+      <Filter>fly\compute_engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_context.h">
+      <Filter>fly\compute_engine\cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_device.h">
+      <Filter>fly\compute_engine\cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_engine.h">
+      <Filter>fly\compute_engine\cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_event.h">
+      <Filter>fly\compute_engine\cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_kernel.h">
+      <Filter>fly\compute_engine\cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_profiling_metric.h">
+      <Filter>fly\compute_engine\cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_profiling_state.h">
+      <Filter>fly\compute_engine\cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_program.h">
+      <Filter>fly\compute_engine\cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_stream.h">
+      <Filter>fly\compute_engine\cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_utility.h">
+      <Filter>fly\compute_engine\cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_buffer.h">
+      <Filter>fly\compute_engine\cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\opencl\opencl_context.h">
+      <Filter>fly\compute_engine\opencl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\opencl\opencl_device.h">
+      <Filter>fly\compute_engine\opencl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\opencl\opencl_engine.h">
+      <Filter>fly\compute_engine\opencl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\opencl\opencl_event.h">
+      <Filter>fly\compute_engine\opencl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\opencl\opencl_kernel.h">
+      <Filter>fly\compute_engine\opencl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\opencl\opencl_platform.h">
+      <Filter>fly\compute_engine\opencl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\opencl\opencl_program.h">
+      <Filter>fly\compute_engine\opencl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\opencl\opencl_utility.h">
+      <Filter>fly\compute_engine\opencl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\opencl\opencl_buffer.h">
+      <Filter>fly\compute_engine\opencl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\opencl\opencl_command_queue.h">
+      <Filter>fly\compute_engine\opencl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\opencl\opencl_common.h">
+      <Filter>fly\compute_engine\opencl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_buffer.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_command_buffer_holder.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_command_pool.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_compute_pipeline.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_descriptor_pool.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_descriptor_set_holder.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_descriptor_set_layout.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_device.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_engine.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_event.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_fence.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_instance.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_physical_device.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_pipeline_cache_entry.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_query_pool.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_queue.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_semaphore.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_shader_module.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\vulkan_utility.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\shaderc_compiler.h">
+      <Filter>fly\compute_engine\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\compute_engine\vulkan\shaderc_fly\shaderrc_fly.hpp">
+      <Filter>fly\compute_engine\vulkan\shaderc_fly</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\dto\kernel_runtime_data.h">
+      <Filter>fly\dto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\dto\local_memory_modifier.h">
+      <Filter>fly\dto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\dto\kernel_result.h">
+      <Filter>fly\dto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\argument_upload_type.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\compute_api.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\device_type.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\dimension_vector_type.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\enum_bitfield.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\global_size_type.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\kernel_run_mode.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\logging_level.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\modifier_action.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\modifier_dimension.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\modifier_type.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\print_format.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\profiling_counter_type.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\search_method.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\time_unit.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\validation_method.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\validation_mode.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\argument_access_type.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\argument_data_type.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\enum\argument_memory_location.h">
+      <Filter>fly\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\kernel\kernel_composition.h">
+      <Filter>fly\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\kernel\kernel_configuration.h">
+      <Filter>fly\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\kernel\kernel_constraint.h">
+      <Filter>fly\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\kernel\kernel_manager.h">
+      <Filter>fly\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\kernel\kernel_parameter.h">
+      <Filter>fly\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\kernel\kernel_parameter_pack.h">
+      <Filter>fly\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\kernel\kernel.h">
+      <Filter>fly\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\kernel_argument\kernel_argument.h">
+      <Filter>fly\kernel_argument</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\kernel_argument\argument_manager.h">
+      <Filter>fly\kernel_argument</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuning_runner\configuration_manager.h">
+      <Filter>fly\tuning_runner</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuning_runner\configuration_storage.h">
+      <Filter>fly\tuning_runner</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuning_runner\kernel_runner.h">
+      <Filter>fly\tuning_runner</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuning_runner\manipulator_interface.h">
+      <Filter>fly\tuning_runner</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuning_runner\manipulator_interface_implementation.h">
+      <Filter>fly\tuning_runner</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuning_runner\result_validator.h">
+      <Filter>fly\tuning_runner</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuning_runner\tuning_runner.h">
+      <Filter>fly\tuning_runner</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuning_runner\searcher\full_searcher.h">
+      <Filter>fly\tuning_runner\searcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuning_runner\searcher\mcmc_searcher.h">
+      <Filter>fly\tuning_runner\searcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuning_runner\searcher\random_searcher.h">
+      <Filter>fly\tuning_runner\searcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuning_runner\searcher\searcher.h">
+      <Filter>fly\tuning_runner\searcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\tuning_runner\searcher\annealing_searcher.h">
+      <Filter>fly\tuning_runner\searcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\utility\logger.h">
+      <Filter>fly\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\utility\result_loader.h">
+      <Filter>fly\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\utility\result_printer.h">
+      <Filter>fly\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\utility\timer.h">
+      <Filter>fly\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\fly\utility\fly_utility.h">
+      <Filter>fly\utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		960E4CFB22B77E49007CC8F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 960E4CFA22B77E49007CC8F7 /* AppDelegate.m */; };
+		960E4CFE22B77E49007CC8F7 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 960E4CFD22B77E49007CC8F7 /* ViewController.mm */; };
+		960E4D0122B77E49007CC8F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 960E4CFF22B77E49007CC8F7 /* Main.storyboard */; };
+		960E4D0322B77E4C007CC8F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960E4D0222B77E4C007CC8F7 /* Assets.xcassets */; };
+		960E4D0622B77E4C007CC8F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 960E4D0422B77E4C007CC8F7 /* LaunchScreen.storyboard */; };
+		960E4D0922B77E4C007CC8F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 960E4D0822B77E4C007CC8F7 /* main.m */; };
+		960E4D2122B78764007CC8F7 /* computeShader.comp in Resources */ = {isa = PBXBuildFile; fileRef = 960E4D1722B78764007CC8F7 /* computeShader.comp */; };
+		960E4D2222B78764007CC8F7 /* comp.spv in Resources */ = {isa = PBXBuildFile; fileRef = 960E4D1822B78764007CC8F7 /* comp.spv */; };
+		960E4D2422B78764007CC8F7 /* running_kernel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 960E4D1C22B78764007CC8F7 /* running_kernel.cpp */; };
+		960E4D2622B78764007CC8F7 /* vulkan_kernel.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 960E4D1E22B78764007CC8F7 /* vulkan_kernel.glsl */; };
+		960E4D3522B78C83007CC8F7 /* libMoltenVK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960E4D3222B78C83007CC8F7 /* libMoltenVK.a */; };
+		960E4D3622B78C83007CC8F7 /* libMoltenVKGLSLToSPIRVConverter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960E4D3322B78C83007CC8F7 /* libMoltenVKGLSLToSPIRVConverter.a */; };
+		960E4D3722B78C83007CC8F7 /* libMoltenVKSPIRVToMSLConverter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960E4D3422B78C83007CC8F7 /* libMoltenVKSPIRVToMSLConverter.a */; };
+		960E4D3922B79245007CC8F7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 960E4D3822B79245007CC8F7 /* libc++.tbd */; };
+		960E4E2922B79444007CC8F7 /* libios_flygpgpu_lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960E4D5422B79305007CC8F7 /* libios_flygpgpu_lib.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		960E4D5322B79305007CC8F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 960E4D4F22B79305007CC8F7 /* ios_flygpgpu_lib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 960E4D4322B792ED007CC8F7;
+			remoteInfo = ios_flygpgpu_lib;
+		};
+		960E4E2722B7943F007CC8F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 960E4D4F22B79305007CC8F7 /* ios_flygpgpu_lib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 960E4D4222B792ED007CC8F7;
+			remoteInfo = ios_flygpgpu_lib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		960E4CF622B77E49007CC8F7 /* flygpgpu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flygpgpu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		960E4CF922B77E49007CC8F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		960E4CFA22B77E49007CC8F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		960E4CFC22B77E49007CC8F7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		960E4CFD22B77E49007CC8F7 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		960E4D0022B77E49007CC8F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		960E4D0222B77E4C007CC8F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		960E4D0522B77E4C007CC8F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		960E4D0722B77E4C007CC8F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		960E4D0822B77E4C007CC8F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		960E4D1722B78764007CC8F7 /* computeShader.comp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = computeShader.comp; sourceTree = "<group>"; };
+		960E4D1822B78764007CC8F7 /* comp.spv */ = {isa = PBXFileReference; lastKnownFileType = file; path = comp.spv; sourceTree = "<group>"; };
+		960E4D1B22B78764007CC8F7 /* demo1.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = demo1.hpp; sourceTree = "<group>"; };
+		960E4D1C22B78764007CC8F7 /* running_kernel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = running_kernel.cpp; sourceTree = "<group>"; };
+		960E4D1E22B78764007CC8F7 /* vulkan_kernel.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vulkan_kernel.glsl; sourceTree = "<group>"; };
+		960E4D3222B78C83007CC8F7 /* libMoltenVK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMoltenVK.a; path = ../../thirdpart/iOS/libMoltenVK.a; sourceTree = "<group>"; };
+		960E4D3322B78C83007CC8F7 /* libMoltenVKGLSLToSPIRVConverter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMoltenVKGLSLToSPIRVConverter.a; path = ../../thirdpart/iOS/libMoltenVKGLSLToSPIRVConverter.a; sourceTree = "<group>"; };
+		960E4D3422B78C83007CC8F7 /* libMoltenVKSPIRVToMSLConverter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMoltenVKSPIRVToMSLConverter.a; path = ../../thirdpart/iOS/libMoltenVKSPIRVToMSLConverter.a; sourceTree = "<group>"; };
+		960E4D3822B79245007CC8F7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		960E4D4F22B79305007CC8F7 /* ios_flygpgpu_lib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ios_flygpgpu_lib.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		960E4CF322B77E49007CC8F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				960E4E2922B79444007CC8F7 /* libios_flygpgpu_lib.a in Frameworks */,
+				960E4D3922B79245007CC8F7 /* libc++.tbd in Frameworks */,
+				960E4D3522B78C83007CC8F7 /* libMoltenVK.a in Frameworks */,
+				960E4D3622B78C83007CC8F7 /* libMoltenVKGLSLToSPIRVConverter.a in Frameworks */,
+				960E4D3722B78C83007CC8F7 /* libMoltenVKSPIRVToMSLConverter.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		960E4CED22B77E49007CC8F7 = {
+			isa = PBXGroup;
+			children = (
+				960E4D4F22B79305007CC8F7 /* ios_flygpgpu_lib.xcodeproj */,
+				960E4CF822B77E49007CC8F7 /* flygpgpu */,
+				960E4CF722B77E49007CC8F7 /* Products */,
+				960E4D2922B7885B007CC8F7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		960E4CF722B77E49007CC8F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				960E4CF622B77E49007CC8F7 /* flygpgpu.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		960E4CF822B77E49007CC8F7 /* flygpgpu */ = {
+			isa = PBXGroup;
+			children = (
+				960E4D1522B78764007CC8F7 /* fly_demo */,
+				960E4CF922B77E49007CC8F7 /* AppDelegate.h */,
+				960E4CFA22B77E49007CC8F7 /* AppDelegate.m */,
+				960E4CFC22B77E49007CC8F7 /* ViewController.h */,
+				960E4CFD22B77E49007CC8F7 /* ViewController.mm */,
+				960E4CFF22B77E49007CC8F7 /* Main.storyboard */,
+				960E4D0222B77E4C007CC8F7 /* Assets.xcassets */,
+				960E4D0422B77E4C007CC8F7 /* LaunchScreen.storyboard */,
+				960E4D0722B77E4C007CC8F7 /* Info.plist */,
+				960E4D0822B77E4C007CC8F7 /* main.m */,
+			);
+			path = flygpgpu;
+			sourceTree = "<group>";
+		};
+		960E4D1522B78764007CC8F7 /* fly_demo */ = {
+			isa = PBXGroup;
+			children = (
+				960E4D1622B78764007CC8F7 /* shader */,
+				960E4D1A22B78764007CC8F7 /* demo1 */,
+			);
+			name = fly_demo;
+			path = ../../../fly_demo;
+			sourceTree = "<group>";
+		};
+		960E4D1622B78764007CC8F7 /* shader */ = {
+			isa = PBXGroup;
+			children = (
+				960E4D1722B78764007CC8F7 /* computeShader.comp */,
+				960E4D1822B78764007CC8F7 /* comp.spv */,
+			);
+			path = shader;
+			sourceTree = "<group>";
+		};
+		960E4D1A22B78764007CC8F7 /* demo1 */ = {
+			isa = PBXGroup;
+			children = (
+				960E4D1B22B78764007CC8F7 /* demo1.hpp */,
+				960E4D1C22B78764007CC8F7 /* running_kernel.cpp */,
+				960E4D1E22B78764007CC8F7 /* vulkan_kernel.glsl */,
+			);
+			path = demo1;
+			sourceTree = "<group>";
+		};
+		960E4D2922B7885B007CC8F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				960E4D3822B79245007CC8F7 /* libc++.tbd */,
+				960E4D3222B78C83007CC8F7 /* libMoltenVK.a */,
+				960E4D3322B78C83007CC8F7 /* libMoltenVKGLSLToSPIRVConverter.a */,
+				960E4D3422B78C83007CC8F7 /* libMoltenVKSPIRVToMSLConverter.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		960E4D5022B79305007CC8F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				960E4D5422B79305007CC8F7 /* libios_flygpgpu_lib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		960E4CF522B77E49007CC8F7 /* flygpgpu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 960E4D0C22B77E4C007CC8F7 /* Build configuration list for PBXNativeTarget "flygpgpu" */;
+			buildPhases = (
+				960E4CF222B77E49007CC8F7 /* Sources */,
+				960E4CF322B77E49007CC8F7 /* Frameworks */,
+				960E4CF422B77E49007CC8F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				960E4E2822B7943F007CC8F7 /* PBXTargetDependency */,
+			);
+			name = flygpgpu;
+			productName = flygpgpu;
+			productReference = 960E4CF622B77E49007CC8F7 /* flygpgpu.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		960E4CEE22B77E49007CC8F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = detu;
+				TargetAttributes = {
+					960E4CF522B77E49007CC8F7 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 960E4CF122B77E49007CC8F7 /* Build configuration list for PBXProject "ios_flygpgpu" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 960E4CED22B77E49007CC8F7;
+			productRefGroup = 960E4CF722B77E49007CC8F7 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 960E4D5022B79305007CC8F7 /* Products */;
+					ProjectRef = 960E4D4F22B79305007CC8F7 /* ios_flygpgpu_lib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				960E4CF522B77E49007CC8F7 /* flygpgpu */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		960E4D5422B79305007CC8F7 /* libios_flygpgpu_lib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libios_flygpgpu_lib.a;
+			remoteRef = 960E4D5322B79305007CC8F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		960E4CF422B77E49007CC8F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				960E4D0622B77E4C007CC8F7 /* LaunchScreen.storyboard in Resources */,
+				960E4D2622B78764007CC8F7 /* vulkan_kernel.glsl in Resources */,
+				960E4D0322B77E4C007CC8F7 /* Assets.xcassets in Resources */,
+				960E4D0122B77E49007CC8F7 /* Main.storyboard in Resources */,
+				960E4D2222B78764007CC8F7 /* comp.spv in Resources */,
+				960E4D2122B78764007CC8F7 /* computeShader.comp in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		960E4CF222B77E49007CC8F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				960E4D2422B78764007CC8F7 /* running_kernel.cpp in Sources */,
+				960E4CFE22B77E49007CC8F7 /* ViewController.mm in Sources */,
+				960E4D0922B77E4C007CC8F7 /* main.m in Sources */,
+				960E4CFB22B77E49007CC8F7 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		960E4E2822B7943F007CC8F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ios_flygpgpu_lib;
+			targetProxy = 960E4E2722B7943F007CC8F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		960E4CFF22B77E49007CC8F7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				960E4D0022B77E49007CC8F7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		960E4D0422B77E4C007CC8F7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				960E4D0522B77E4C007CC8F7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		960E4D0A22B77E4C007CC8F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		960E4D0B22B77E4C007CC8F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		960E4D0D22B77E4C007CC8F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LAK233Z9K8;
+				HEADER_SEARCH_PATHS = (
+					../../,
+					../../thirdpart/include,
+				);
+				INFOPLIST_FILE = flygpgpu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = ../../thirdpart/iOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.detu.flygpgpu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		960E4D0E22B77E4C007CC8F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LAK233Z9K8;
+				HEADER_SEARCH_PATHS = (
+					../../,
+					../../thirdpart/include,
+				);
+				INFOPLIST_FILE = flygpgpu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = ../../thirdpart/iOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.detu.flygpgpu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		960E4CF122B77E49007CC8F7 /* Build configuration list for PBXProject "ios_flygpgpu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				960E4D0A22B77E4C007CC8F7 /* Debug */,
+				960E4D0B22B77E4C007CC8F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		960E4D0C22B77E4C007CC8F7 /* Build configuration list for PBXNativeTarget "flygpgpu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				960E4D0D22B77E4C007CC8F7 /* Debug */,
+				960E4D0E22B77E4C007CC8F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 960E4CEE22B77E49007CC8F7 /* Project object */;
+}
