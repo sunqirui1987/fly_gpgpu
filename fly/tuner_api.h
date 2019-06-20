@@ -46,12 +46,6 @@
 #include "fly/api/stop_condition/tuning_duration.h"
 
 
-// Reference class interface
-#include "fly/api/reference_class.h"
-
-
-// Tuning manipulator interface
-#include "fly/api/tuning_manipulator.h"
 
 // Support for 16-bit floating point data type
 #include "fly/half.h"
@@ -222,41 +216,7 @@ public:
     void addConstraint(const KernelId id, const std::vector<std::string>& parameterNames,
         const std::function<bool(const std::vector<size_t>&)>& constraintFunction);
 
-    /** @fn void setTuningManipulator(const KernelId id, std::unique_ptr<TuningManipulator> manipulator)
-      * Sets tuning manipulator for specified kernel. Tuning manipulator enables customization of kernel execution. This is useful in several cases,
-      * eg. running part of the computation in C++ code, utilizing iterative kernel launches or composite kernels. See TuningManipulator for more
-      * information.
-      * @param id Id of kernel for which the tuning manipulator will be set.
-      * @param manipulator Tuning manipulator for specified kernel.
-      */
-    void setTuningManipulator(const KernelId id, std::unique_ptr<TuningManipulator> manipulator);
-
-    /** @fn void setTuningManipulatorSynchronization(const KernelId id, const bool flag)
-      * Controls whether framework performs implicit device synchronization after launchComputation() method inside tuning manipulator has finished.
-      * Performing the synchronization is necessary for obtaining correct computation duration. Turning it off may increase performance during
-      * regular computation after the tuning has concluded. Synchronization is turned on by default.
-      * @param id Id of kernel for which the tuning manipulator synchronization flag will be set.
-      * @param flag If true, tuning manipulator synchronization will be turned on for specified kernel or kernel composition. It will be turned off
-      * otherwise.
-      */
-    void setTuningManipulatorSynchronization(const KernelId id, const bool flag);
-
-    /** @fn KernelId addComposition(const std::string& compositionName, const std::vector<KernelId>& kernelIds,
-      * std::unique_ptr<TuningManipulator> manipulator)
-      * Creates a kernel composition using specified kernels. The following methods can be used with kernel compositions and will call
-      * the corresponding method for all kernels inside the composition: setKernelArguments(), addParameter() (both versions), addConstraint().
-      * 
-      * Kernel compositions do not inherit any parameters or constraints from the original kernels. Setting kernel arguments and adding parameters
-      * or constraints to kernels inside given composition will not affect the original kernels or other compositions. Tuning manipulator is required
-      * in order to launch kernel composition with the tuner. See TuningManipulator for more information.
-      * @param compositionName Name of kernel composition. The name is used during output printing.
-      * @param kernelIds Ids of kernels which will be included in the composition.
-      * @param manipulator Tuning manipulator for the composition.
-      * @return Id assigned to kernel composition by tuner. The id can be used in other API methods.
-      */
-    KernelId addComposition(const std::string& compositionName, const std::vector<KernelId>& kernelIds,
-        std::unique_ptr<TuningManipulator> manipulator);
-
+    
     /** @fn void setCompositionKernelThreadModifier(const KernelId compositionId, const KernelId kernelId, const ModifierType modifierType,
       * const ModifierDimension modifierDimension, const std::vector<std::string>& parameterNames,
       * const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction)
@@ -465,63 +425,8 @@ public:
       */
     std::string getKernelSource(const KernelId id, const std::vector<ParameterPair>& configuration) const;
 
-    /** @fn void setReferenceKernel(const KernelId id, const KernelId referenceId, const std::vector<ParameterPair>& referenceConfiguration,
-      * const std::vector<ArgumentId>& validatedArgumentIds)
-      * Sets reference kernel for specified kernel. Reference kernel output will be compared to tuned kernel output in order to ensure
-      * correctness of computation. Reference kernel uses only single configuration and cannot be composite.
-      * @param id Id of kernel for which reference kernel will be set.
-      * @param referenceId Id of reference kernel. This can be the same as validated kernel. This can be useful if the kernel has a configuration
-      * which is known to produce correct results.
-      * @param referenceConfiguration Configuration under which the reference kernel will be launched to produce reference output.
-      * @param validatedArgumentIds Ids of kernel arguments which will be validated. The validated arguments must be vector arguments and cannot be
-      * read-only.
-      */
-    void setReferenceKernel(const KernelId id, const KernelId referenceId, const std::vector<ParameterPair>& referenceConfiguration,
-        const std::vector<ArgumentId>& validatedArgumentIds);
-
-    /** @fn void setReferenceClass(const KernelId id, std::unique_ptr<ReferenceClass> referenceClass,
-      * const std::vector<ArgumentId>& validatedArgumentIds)
-      * Sets reference class for specified kernel. Reference class output will be compared to tuned kernel output in order to ensure
-      * correctness of computation.
-      * @param id Id of kernel for which reference class will be set.
-      * @param referenceClass Reference class which produces reference output for specified kernel. See ReferenceClass for more information.
-      * @param validatedArgumentIds Ids of kernel arguments which will be validated. The validated arguments must be vector arguments and cannot be
-      * read-only.
-      */
-    void setReferenceClass(const KernelId id, std::unique_ptr<ReferenceClass> referenceClass, const std::vector<ArgumentId>& validatedArgumentIds);
-
-    /** @fn void setValidationMode(const ValidationMode mode)
-      * Sets modes under which kernel output validation is enabled. By default, output validation is enabled only during kernel tuning.
-      * @param mode Bitfield of modes under which kernel output validation is enabled. See ::ValidationMode for more information.
-      */
-    void setValidationMode(const ValidationMode mode);
-
-    /** @fn void setValidationMethod(const ValidationMethod method, const double toleranceThreshold)
-      * Sets validation method and tolerance threshold for floating-point argument validation. Default validation method is side by side comparison.
-      * Default tolerance threshold is 1e-4.
-      * @param method Validation method which will be used for floating-point argument validation. See ::ValidationMethod for more information.
-      * @param toleranceThreshold Output validation threshold. If difference between tuned kernel output and reference output is within tolerance
-      * threshold, the tuned kernel output will be considered correct.
-      */
-    void setValidationMethod(const ValidationMethod method, const double toleranceThreshold);
-
-    /** @fn void setValidationRange(const ArgumentId id, const size_t range)
-      * Sets validation range for specified argument to specified validation range. Only elements within validation range, starting with the first
-      * element, will be validated. All elements are validated by default.
-      * @param id Id of argument for which the validation range will be set.
-      * @param range Range inside which the argument elements will be validated, starting from the first element.
-      */
-    void setValidationRange(const ArgumentId id, const size_t range);
-
-    /** @fn void setArgumentComparator(const ArgumentId id, const std::function<bool(const void*, const void*)>& comparator)
-      * Sets argument comparator for specified kernel argument. Arguments with custom data type cannot be compared using built-in comparison
-      * operators and require user to provide a comparator. Comparator can also be optionally added for arguments with built-in data types.
-      * @param id Id of argument for which the comparator will be set.
-      * @param comparator Function which receives two elements with data type matching the data type of specified kernel argument and returns true
-      * if the elements are equal. Returns false otherwise.
-      */
-    void setArgumentComparator(const ArgumentId id, const std::function<bool(const void*, const void*)>& comparator);
-
+   
+    
     /** @fn void setCompilerOptions(const std::string& options)
       * Sets compute API compiler options to specified options. There are no default options for OpenCL back-end. Default option for CUDA
       * back-end is "--gpu-architecture=compute_30".

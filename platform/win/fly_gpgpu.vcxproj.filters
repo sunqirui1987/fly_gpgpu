@@ -73,9 +73,6 @@
     <ClCompile Include="..\..\fly\api\platform_info.cpp">
       <Filter>fly\api</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\fly\api\tuning_manipulator.cpp">
-      <Filter>fly\api</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\fly\compute_engine\cuda\cuda_engine.cpp">
       <Filter>fly\compute_engine\cuda</Filter>
     </ClCompile>
@@ -136,12 +133,6 @@
     <ClCompile Include="..\..\fly\tuning_runner\kernel_runner.cpp">
       <Filter>fly\tuning_runner</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\fly\tuning_runner\manipulator_interface_implementation.cpp">
-      <Filter>fly\tuning_runner</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\fly\tuning_runner\result_validator.cpp">
-      <Filter>fly\tuning_runner</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\fly\utility\result_loader.cpp">
       <Filter>fly\utility</Filter>
     </ClCompile>
@@ -187,12 +178,6 @@
       <Filter>fly\api</Filter>
     </ClInclude>
     <ClInclude Include="..\..\fly\api\platform_info.h">
-      <Filter>fly\api</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\api\reference_class.h">
-      <Filter>fly\api</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\api\tuning_manipulator.h">
       <Filter>fly\api</Filter>
     </ClInclude>
     <ClInclude Include="..\..\fly\api\stop_condition\configuration_duration.h">
@@ -439,15 +424,6 @@
       <Filter>fly\kernel_argument</Filter>
     </ClInclude>
     <ClInclude Include="..\..\fly\tuning_runner\kernel_runner.h">
-      <Filter>fly\tuning_runner</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\tuning_runner\manipulator_interface.h">
-      <Filter>fly\tuning_runner</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\tuning_runner\manipulator_interface_implementation.h">
-      <Filter>fly\tuning_runner</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\tuning_runner\result_validator.h">
       <Filter>fly\tuning_runner</Filter>
     </ClInclude>
     <ClInclude Include="..\..\fly\utility\logger.h">

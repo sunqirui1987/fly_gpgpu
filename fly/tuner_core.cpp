@@ -62,13 +62,7 @@ KernelId TunerCore::addKernelFromFile(const std::string& filePath, const std::st
     return kernelManager.addKernelFromFile(filePath, kernelName, globalSize, localSize);
 }
 
-KernelId TunerCore::addComposition(const std::string& compositionName, const std::vector<KernelId>& kernelIds,
-    std::unique_ptr<TuningManipulator> manipulator)
-{
-    KernelId compositionId = kernelManager.addKernelComposition(compositionName, kernelIds);
-    kernelRunner->setTuningManipulator(compositionId, std::move(manipulator));
-    return compositionId;
-}
+
 
 void TunerCore::addParameter(const KernelId id, const std::string& parameterName, const std::vector<size_t>& parameterValues)
 {
@@ -183,14 +177,7 @@ ComputationResult TunerCore::runKernel(const KernelId id, const std::vector<Para
 {
     KernelResult result;
 
-    if (kernelManager.isComposition(id))
-    {
-        result = kernelRunner->runComposition(id, KernelRunMode::Running, configuration, output);
-    }
-    else
-    {
-        result = kernelRunner->runKernel(id, KernelRunMode::Running, configuration, output);
-    }
+    result = kernelRunner->runKernel(id, KernelRunMode::Running, configuration, output);
 
     kernelRunner->clearBuffers();
 
@@ -213,85 +200,6 @@ ComputationResult TunerCore::runKernel(const KernelId id, const std::vector<Para
     }
 }
 
-void TunerCore::setTuningManipulator(const KernelId id, std::unique_ptr<TuningManipulator> manipulator)
-{
-    if (!kernelManager.isKernel(id) && !kernelManager.isComposition(id))
-    {
-        throw std::runtime_error(std::string("Invalid kernel id: ") + std::to_string(id));
-    }
-    kernelRunner->setTuningManipulator(id, std::move(manipulator));
-
-    if (kernelManager.isKernel(id))
-    {
-        kernelManager.getKernel(id).setTuningManipulatorFlag(true);
-    }
-}
-
-void TunerCore::setTuningManipulatorSynchronization(const KernelId id, const bool flag)
-{
-    if (!kernelManager.isKernel(id) && !kernelManager.isComposition(id))
-    {
-        throw std::runtime_error(std::string("Invalid kernel id: ") + std::to_string(id));
-    }
-
-    kernelRunner->setTuningManipulatorSynchronization(id, flag);
-}
-
-void TunerCore::setValidationMethod(const ValidationMethod method, const double toleranceThreshold)
-{
-    kernelRunner->setValidationMethod(method, toleranceThreshold);
-}
-
-void TunerCore::setValidationMode(const ValidationMode mode)
-{
-    kernelRunner->setValidationMode(mode);
-}
-
-void TunerCore::setValidationRange(const ArgumentId id, const size_t range)
-{
-    if (id > argumentManager.getArgumentCount())
-    {
-        throw std::runtime_error(std::string("Invalid argument id: ") + std::to_string(id));
-    }
-    if (range > argumentManager.getArgument(id).getNumberOfElements())
-    {
-        throw std::runtime_error(std::string("Invalid validation range for argument with id: ") + std::to_string(id));
-    }
-    kernelRunner->setValidationRange(id, range);
-}
-
-void TunerCore::setArgumentComparator(const ArgumentId id, const std::function<bool(const void*, const void*)>& comparator)
-{
-    if (id > argumentManager.getArgumentCount())
-    {
-        throw std::runtime_error(std::string("Invalid argument id: ") + std::to_string(id));
-    }
-    kernelRunner->setArgumentComparator(id, comparator);
-}
-
-void TunerCore::setReferenceKernel(const KernelId id, const KernelId referenceId, const std::vector<ParameterPair>& referenceConfiguration,
-    const std::vector<ArgumentId>& validatedArgumentIds)
-{
-    if (!kernelManager.isKernel(id) && !kernelManager.isComposition(id))
-    {
-        throw std::runtime_error(std::string("Invalid kernel id: ") + std::to_string(id));
-    }
-    if (!kernelManager.isKernel(referenceId))
-    {
-        throw std::runtime_error(std::string("Invalid reference kernel id: ") + std::to_string(referenceId));
-    }
-    kernelRunner->setReferenceKernel(id, referenceId, referenceConfiguration, validatedArgumentIds);
-}
-
-void TunerCore::setReferenceClass(const KernelId id, std::unique_ptr<ReferenceClass> referenceClass,
-    const std::vector<ArgumentId>& validatedArgumentIds)
-{
-    if (!kernelManager.isKernel(id) && !kernelManager.isComposition(id))
-    {
-        throw std::runtime_error(std::string("Invalid kernel id: ") + std::to_string(id));
-    }
-    kernelRunner->setReferenceClass(id, std::move(referenceClass), validatedArgumentIds);
-}
 
 void TunerCore::setPrintingTimeUnit(const TimeUnit unit)
 {
