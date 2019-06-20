@@ -22,24 +22,13 @@
 		96D0F04F228D2C6E00C98544 /* kernel_result.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFAC228D2C6E00C98544 /* kernel_result.h */; };
 		96D0F050228D2C6E00C98544 /* local_memory_modifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFAD228D2C6E00C98544 /* local_memory_modifier.h */; };
 		96D0F051228D2C6E00C98544 /* fly_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFAE228D2C6E00C98544 /* fly_types.h */; };
-		96D0F052228D2C6E00C98544 /* random_searcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFB1228D2C6E00C98544 /* random_searcher.h */; };
-		96D0F053228D2C6E00C98544 /* annealing_searcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFB2228D2C6E00C98544 /* annealing_searcher.h */; };
-		96D0F054228D2C6E00C98544 /* mcmc_searcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFB3228D2C6E00C98544 /* mcmc_searcher.h */; };
-		96D0F055228D2C6E00C98544 /* full_searcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFB4228D2C6E00C98544 /* full_searcher.h */; };
-		96D0F056228D2C6E00C98544 /* searcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFB5228D2C6E00C98544 /* searcher.h */; };
 		96D0F057228D2C6E00C98544 /* kernel_runner.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFB6228D2C6E00C98544 /* kernel_runner.h */; };
 		96D0F058228D2C6E00C98544 /* result_validator.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFB7228D2C6E00C98544 /* result_validator.h */; };
-		96D0F059228D2C6E00C98544 /* configuration_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFB8228D2C6E00C98544 /* configuration_manager.cpp */; };
-		96D0F05A228D2C6E00C98544 /* configuration_storage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFB9228D2C6E00C98544 /* configuration_storage.cpp */; };
-		96D0F05B228D2C6E00C98544 /* configuration_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFBA228D2C6E00C98544 /* configuration_manager.h */; };
 		96D0F05C228D2C6E00C98544 /* manipulator_interface_implementation.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFBB228D2C6E00C98544 /* manipulator_interface_implementation.h */; };
-		96D0F05D228D2C6E00C98544 /* configuration_storage.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFBC228D2C6E00C98544 /* configuration_storage.h */; };
 		96D0F05E228D2C6E00C98544 /* manipulator_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFBD228D2C6E00C98544 /* manipulator_interface.h */; };
-		96D0F05F228D2C6E00C98544 /* tuning_runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFBE228D2C6E00C98544 /* tuning_runner.cpp */; };
 		96D0F060228D2C6E00C98544 /* kernel_runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFBF228D2C6E00C98544 /* kernel_runner.cpp */; };
 		96D0F061228D2C6E00C98544 /* manipulator_interface_implementation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFC0228D2C6E00C98544 /* manipulator_interface_implementation.cpp */; };
 		96D0F062228D2C6E00C98544 /* result_validator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFC1228D2C6E00C98544 /* result_validator.cpp */; };
-		96D0F063228D2C6E00C98544 /* tuning_runner.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFC2228D2C6E00C98544 /* tuning_runner.h */; };
 		96D0F065228D2C6E00C98544 /* modifier_dimension.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFC5228D2C6E00C98544 /* modifier_dimension.h */; };
 		96D0F066228D2C6E00C98544 /* argument_upload_type.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFC6228D2C6E00C98544 /* argument_upload_type.h */; };
 		96D0F067228D2C6E00C98544 /* print_format.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFC7228D2C6E00C98544 /* print_format.h */; };
@@ -180,24 +169,13 @@
 		96D0EFAC228D2C6E00C98544 /* kernel_result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_result.h; sourceTree = "<group>"; };
 		96D0EFAD228D2C6E00C98544 /* local_memory_modifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = local_memory_modifier.h; sourceTree = "<group>"; };
 		96D0EFAE228D2C6E00C98544 /* fly_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fly_types.h; sourceTree = "<group>"; };
-		96D0EFB1228D2C6E00C98544 /* random_searcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = random_searcher.h; sourceTree = "<group>"; };
-		96D0EFB2228D2C6E00C98544 /* annealing_searcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = annealing_searcher.h; sourceTree = "<group>"; };
-		96D0EFB3228D2C6E00C98544 /* mcmc_searcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mcmc_searcher.h; sourceTree = "<group>"; };
-		96D0EFB4228D2C6E00C98544 /* full_searcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = full_searcher.h; sourceTree = "<group>"; };
-		96D0EFB5228D2C6E00C98544 /* searcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searcher.h; sourceTree = "<group>"; };
 		96D0EFB6228D2C6E00C98544 /* kernel_runner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_runner.h; sourceTree = "<group>"; };
 		96D0EFB7228D2C6E00C98544 /* result_validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = result_validator.h; sourceTree = "<group>"; };
-		96D0EFB8228D2C6E00C98544 /* configuration_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = configuration_manager.cpp; sourceTree = "<group>"; };
-		96D0EFB9228D2C6E00C98544 /* configuration_storage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = configuration_storage.cpp; sourceTree = "<group>"; };
-		96D0EFBA228D2C6E00C98544 /* configuration_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = configuration_manager.h; sourceTree = "<group>"; };
 		96D0EFBB228D2C6E00C98544 /* manipulator_interface_implementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manipulator_interface_implementation.h; sourceTree = "<group>"; };
-		96D0EFBC228D2C6E00C98544 /* configuration_storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = configuration_storage.h; sourceTree = "<group>"; };
 		96D0EFBD228D2C6E00C98544 /* manipulator_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manipulator_interface.h; sourceTree = "<group>"; };
-		96D0EFBE228D2C6E00C98544 /* tuning_runner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tuning_runner.cpp; sourceTree = "<group>"; };
 		96D0EFBF228D2C6E00C98544 /* kernel_runner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kernel_runner.cpp; sourceTree = "<group>"; };
 		96D0EFC0228D2C6E00C98544 /* manipulator_interface_implementation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = manipulator_interface_implementation.cpp; sourceTree = "<group>"; };
 		96D0EFC1228D2C6E00C98544 /* result_validator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = result_validator.cpp; sourceTree = "<group>"; };
-		96D0EFC2228D2C6E00C98544 /* tuning_runner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tuning_runner.h; sourceTree = "<group>"; };
 		96D0EFC5228D2C6E00C98544 /* modifier_dimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modifier_dimension.h; sourceTree = "<group>"; };
 		96D0EFC6228D2C6E00C98544 /* argument_upload_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = argument_upload_type.h; sourceTree = "<group>"; };
 		96D0EFC7228D2C6E00C98544 /* print_format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = print_format.h; sourceTree = "<group>"; };
@@ -383,34 +361,15 @@
 		96D0EFAF228D2C6E00C98544 /* tuning_runner */ = {
 			isa = PBXGroup;
 			children = (
-				96D0EFB0228D2C6E00C98544 /* searcher */,
 				96D0EFB6228D2C6E00C98544 /* kernel_runner.h */,
 				96D0EFBF228D2C6E00C98544 /* kernel_runner.cpp */,
 				96D0EFB7228D2C6E00C98544 /* result_validator.h */,
 				96D0EFC1228D2C6E00C98544 /* result_validator.cpp */,
-				96D0EFBA228D2C6E00C98544 /* configuration_manager.h */,
-				96D0EFB8228D2C6E00C98544 /* configuration_manager.cpp */,
-				96D0EFBC228D2C6E00C98544 /* configuration_storage.h */,
-				96D0EFB9228D2C6E00C98544 /* configuration_storage.cpp */,
 				96D0EFBD228D2C6E00C98544 /* manipulator_interface.h */,
 				96D0EFBB228D2C6E00C98544 /* manipulator_interface_implementation.h */,
 				96D0EFC0228D2C6E00C98544 /* manipulator_interface_implementation.cpp */,
-				96D0EFC2228D2C6E00C98544 /* tuning_runner.h */,
-				96D0EFBE228D2C6E00C98544 /* tuning_runner.cpp */,
 			);
 			path = tuning_runner;
-			sourceTree = "<group>";
-		};
-		96D0EFB0228D2C6E00C98544 /* searcher */ = {
-			isa = PBXGroup;
-			children = (
-				96D0EFB1228D2C6E00C98544 /* random_searcher.h */,
-				96D0EFB2228D2C6E00C98544 /* annealing_searcher.h */,
-				96D0EFB3228D2C6E00C98544 /* mcmc_searcher.h */,
-				96D0EFB4228D2C6E00C98544 /* full_searcher.h */,
-				96D0EFB5228D2C6E00C98544 /* searcher.h */,
-			);
-			path = searcher;
 			sourceTree = "<group>";
 		};
 		96D0EFC4228D2C6E00C98544 /* enum */ = {
@@ -664,7 +623,6 @@
 				96D0F092228D2C6E00C98544 /* kernel_profiling_data.h in Headers */,
 				96D0F086228D2C6E00C98544 /* tuning_duration.h in Headers */,
 				96D0F06E228D2C6E00C98544 /* global_size_type.h in Headers */,
-				96D0F056228D2C6E00C98544 /* searcher.h in Headers */,
 				96D0F0B3228D2C6E00C98544 /* cuda_utility.h in Headers */,
 				96D0F0B6228D2C6E00C98544 /* cuda_device.h in Headers */,
 				96D0F04F228D2C6E00C98544 /* kernel_result.h in Headers */,
@@ -683,7 +641,6 @@
 				96D0F083228D2C6E00C98544 /* stop_condition.h in Headers */,
 				96D0F0D9228D2C6E00C98544 /* vulkan_buffer.h in Headers */,
 				96D0F09D228D2C6E00C98544 /* kernel_composition.h in Headers */,
-				96D0F063228D2C6E00C98544 /* tuning_runner.h in Headers */,
 				96D0F06B228D2C6E00C98544 /* dimension_vector_type.h in Headers */,
 				96D0F069228D2C6E00C98544 /* search_method.h in Headers */,
 				96D0F079228D2C6E00C98544 /* argument_manager.h in Headers */,
@@ -701,11 +658,8 @@
 				96D0F097228D2C6E00C98544 /* device_info.h in Headers */,
 				96D0F0BD228D2C6E00C98544 /* cuda_event.h in Headers */,
 				960E4CE922B775E6007CC8F7 /* tuner_api.h in Headers */,
-				96D0F055228D2C6E00C98544 /* full_searcher.h in Headers */,
 				96D0F0A0228D2C6E00C98544 /* kernel.h in Headers */,
-				96D0F054228D2C6E00C98544 /* mcmc_searcher.h in Headers */,
 				96D0F0D0228D2C6E00C98544 /* vulkan_event.h in Headers */,
-				96D0F05D228D2C6E00C98544 /* configuration_storage.h in Headers */,
 				96D0F090228D2C6E00C98544 /* dimension_vector.h in Headers */,
 				96D0F074228D2C6E00C98544 /* logging_level.h in Headers */,
 				96D0F0D7228D2C6E00C98544 /* vulkan_descriptor_set_holder.h in Headers */,
@@ -717,7 +671,6 @@
 				96D0F0CA228D2C6E00C98544 /* opencl_program.h in Headers */,
 				96D0F0B8228D2C6E00C98544 /* cuda_context.h in Headers */,
 				96D0F08F228D2C6E00C98544 /* tuning_manipulator.h in Headers */,
-				96D0F05B228D2C6E00C98544 /* configuration_manager.h in Headers */,
 				96D0F0B0228D2C6E00C98544 /* result_loader.h in Headers */,
 				96D0F0C1228D2C6E00C98544 /* opencl_device.h in Headers */,
 				96D0F07B228D2C6E00C98544 /* kernel_argument.h in Headers */,
@@ -727,12 +680,10 @@
 				96D0F089228D2C6E00C98544 /* computation_result.h in Headers */,
 				96D0F067228D2C6E00C98544 /* print_format.h in Headers */,
 				96D0F058228D2C6E00C98544 /* result_validator.h in Headers */,
-				96D0F052228D2C6E00C98544 /* random_searcher.h in Headers */,
 				96D0F0CE228D2C6E00C98544 /* vulkan_engine.h in Headers */,
 				96D0F0D5228D2C6E00C98544 /* vulkan_instance.h in Headers */,
 				96D0F0AC228D2C6E00C98544 /* timer.h in Headers */,
 				96D0F0DF228D2C6E00C98544 /* vulkan_command_pool.h in Headers */,
-				96D0F053228D2C6E00C98544 /* annealing_searcher.h in Headers */,
 				96D0F0CD228D2C6E00C98544 /* vulkan_compute_pipeline.h in Headers */,
 				96D0F0C5228D2C6E00C98544 /* opencl_event.h in Headers */,
 				96D0F08A228D2C6E00C98544 /* platform_info.h in Headers */,
@@ -813,7 +764,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96D0F059228D2C6E00C98544 /* configuration_manager.cpp in Sources */,
 				96D0F04D228D2C6E00C98544 /* local_memory_modifier.cpp in Sources */,
 				96D0F095228D2C6E00C98544 /* parameter_pair.cpp in Sources */,
 				96D0F09C228D2C6E00C98544 /* kernel_parameter.cpp in Sources */,
@@ -824,7 +774,6 @@
 				96D0F061228D2C6E00C98544 /* manipulator_interface_implementation.cpp in Sources */,
 				96D0F062228D2C6E00C98544 /* result_validator.cpp in Sources */,
 				96D0F098228D2C6E00C98544 /* kernel_constraint.cpp in Sources */,
-				96D0F05F228D2C6E00C98544 /* tuning_runner.cpp in Sources */,
 				96D0F0C2228D2C6E00C98544 /* opencl_utility.cpp in Sources */,
 				96D0F0A3228D2C6E00C98544 /* kernel_composition.cpp in Sources */,
 				96D0F07C228D2C6E00C98544 /* kernel_argument.cpp in Sources */,
@@ -832,7 +781,6 @@
 				96D0F060228D2C6E00C98544 /* kernel_runner.cpp in Sources */,
 				96D0F080228D2C6E00C98544 /* computation_result.cpp in Sources */,
 				96D0F0BA228D2C6E00C98544 /* cuda_engine.cpp in Sources */,
-				96D0F05A228D2C6E00C98544 /* configuration_storage.cpp in Sources */,
 				96D0F08B228D2C6E00C98544 /* tuning_manipulator.cpp in Sources */,
 				96D0F094228D2C6E00C98544 /* kernel_profiling_data.cpp in Sources */,
 				96D0F0B2228D2C6E00C98544 /* cuda_utility.cpp in Sources */,
