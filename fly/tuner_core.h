@@ -28,8 +28,7 @@ public:
         const DimensionVector& localSize);
     KernelId addKernelFromFile(const std::string& filePath, const std::string& kernelName, const DimensionVector& globalSize,
         const DimensionVector& localSize);
-    KernelId addComposition(const std::string& compositionName, const std::vector<KernelId>& kernelIds,
-        std::unique_ptr<TuningManipulator> manipulator);
+  
     void addParameter(const KernelId id, const std::string& parameterName, const std::vector<size_t>& parameterValues);
     void addParameter(const KernelId id, const std::string& parameterName, const std::vector<double>& parameterValues);
     void addConstraint(const KernelId id, const std::vector<std::string>& parameterNames,
@@ -58,15 +57,6 @@ public:
 
     // Kernel runner methods
     ComputationResult runKernel(const KernelId id, const std::vector<ParameterPair>& configuration, const std::vector<OutputDescriptor>& output);
-    void setTuningManipulator(const KernelId id, std::unique_ptr<TuningManipulator> manipulator);
-    void setTuningManipulatorSynchronization(const KernelId id, const bool flag);
-    void setValidationMethod(const ValidationMethod method, const double toleranceThreshold);
-    void setValidationMode(const ValidationMode mode);
-    void setValidationRange(const ArgumentId id, const size_t range);
-    void setArgumentComparator(const ArgumentId id, const std::function<bool(const void*, const void*)>& comparator);
-    void setReferenceKernel(const KernelId id, const KernelId referenceId, const std::vector<ParameterPair>& referenceConfiguration,
-        const std::vector<ArgumentId>& validatedArgumentIds);
-    void setReferenceClass(const KernelId id, std::unique_ptr<ReferenceClass> referenceClass, const std::vector<ArgumentId>& validatedArgumentIds);
 
 
     // Result printer methods

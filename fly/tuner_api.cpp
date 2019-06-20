@@ -165,45 +165,6 @@ void Tuner::addConstraint(const KernelId id, const std::vector<std::string>& par
     }
 }
 
-void Tuner::setTuningManipulator(const KernelId id, std::unique_ptr<TuningManipulator> manipulator)
-{
-    try
-    {
-        tunerCore->setTuningManipulator(id, std::move(manipulator));
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
-
-void Tuner::setTuningManipulatorSynchronization(const KernelId id, const bool flag)
-{
-    try
-    {
-        tunerCore->setTuningManipulatorSynchronization(id, flag);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
-
-KernelId Tuner::addComposition(const std::string& compositionName, const std::vector<KernelId>& kernelIds,
-    std::unique_ptr<TuningManipulator> manipulator)
-{
-    try
-    {
-        return tunerCore->addComposition(compositionName, kernelIds, std::move(manipulator));
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
 
 void Tuner::setCompositionKernelThreadModifier(const KernelId compositionId, const KernelId kernelId, const ModifierType modifierType,
     const ModifierDimension modifierDimension, const std::vector<std::string>& parameterNames,
@@ -388,72 +349,6 @@ std::string Tuner::getKernelSource(const KernelId id, const std::vector<Paramete
     {
         TunerCore::log(LoggingLevel::Error, error.what());
         throw;
-    }
-}
-
-void Tuner::setReferenceKernel(const KernelId id, const KernelId referenceId, const std::vector<ParameterPair>& referenceConfiguration,
-    const std::vector<ArgumentId>& validatedArgumentIds)
-{
-    try
-    {
-        tunerCore->setReferenceKernel(id, referenceId, referenceConfiguration, validatedArgumentIds);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-    }
-}
-
-void Tuner::setReferenceClass(const KernelId id, std::unique_ptr<ReferenceClass> referenceClass, const std::vector<ArgumentId>& validatedArgumentIds)
-{
-    try
-    {
-        tunerCore->setReferenceClass(id, std::move(referenceClass), validatedArgumentIds);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-    }
-}
-
-void Tuner::setValidationMode(const ValidationMode mode)
-{
-    tunerCore->setValidationMode(mode);
-}
-
-void Tuner::setValidationMethod(const ValidationMethod method, const double toleranceThreshold)
-{
-    try
-    {
-        tunerCore->setValidationMethod(method, toleranceThreshold);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-    }
-}
-
-void Tuner::setValidationRange(const ArgumentId id, const size_t range)
-{
-    try
-    {
-        tunerCore->setValidationRange(id, range);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-    }
-}
-
-void Tuner::setArgumentComparator(const ArgumentId id, const std::function<bool(const void*, const void*)>& comparator)
-{
-    try
-    {
-        tunerCore->setArgumentComparator(id, comparator);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
     }
 }
 

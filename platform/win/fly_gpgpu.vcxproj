@@ -27,7 +27,6 @@
     <ClCompile Include="..\..\fly\api\output_descriptor.cpp" />
     <ClCompile Include="..\..\fly\api\parameter_pair.cpp" />
     <ClCompile Include="..\..\fly\api\platform_info.cpp" />
-    <ClCompile Include="..\..\fly\api\tuning_manipulator.cpp" />
     <ClCompile Include="..\..\fly\compute_engine\cuda\cuda_engine.cpp" />
     <ClCompile Include="..\..\fly\compute_engine\cuda\cuda_utility.cpp" />
     <ClCompile Include="..\..\fly\compute_engine\opencl\opencl_engine.cpp" />
@@ -50,8 +49,6 @@
     <ClCompile Include="..\..\fly\tuner_api.cpp" />
     <ClCompile Include="..\..\fly\tuner_core.cpp" />
     <ClCompile Include="..\..\fly\tuning_runner\kernel_runner.cpp" />
-    <ClCompile Include="..\..\fly\tuning_runner\manipulator_interface_implementation.cpp" />
-    <ClCompile Include="..\..\fly\tuning_runner\result_validator.cpp" />
     <ClCompile Include="..\..\fly\utility\fly_utility.cpp" />
     <ClCompile Include="..\..\fly\utility\logger.cpp" />
     <ClCompile Include="..\..\fly\utility\result_loader.cpp" />
@@ -67,13 +64,11 @@
     <ClInclude Include="..\..\fly\api\output_descriptor.h" />
     <ClInclude Include="..\..\fly\api\parameter_pair.h" />
     <ClInclude Include="..\..\fly\api\platform_info.h" />
-    <ClInclude Include="..\..\fly\api\reference_class.h" />
     <ClInclude Include="..\..\fly\api\stop_condition\configuration_count.h" />
     <ClInclude Include="..\..\fly\api\stop_condition\configuration_duration.h" />
     <ClInclude Include="..\..\fly\api\stop_condition\configuration_fraction.h" />
     <ClInclude Include="..\..\fly\api\stop_condition\stop_condition.h" />
     <ClInclude Include="..\..\fly\api\stop_condition\tuning_duration.h" />
-    <ClInclude Include="..\..\fly\api\tuning_manipulator.h" />
     <ClInclude Include="..\..\fly\compute_engine\compute_engine.h" />
     <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_buffer.h" />
     <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_context.h" />
@@ -156,9 +151,6 @@
     <ClInclude Include="..\..\fly\tuner_api.h" />
     <ClInclude Include="..\..\fly\tuner_core.h" />
     <ClInclude Include="..\..\fly\tuning_runner\kernel_runner.h" />
-    <ClInclude Include="..\..\fly\tuning_runner\manipulator_interface.h" />
-    <ClInclude Include="..\..\fly\tuning_runner\manipulator_interface_implementation.h" />
-    <ClInclude Include="..\..\fly\tuning_runner\result_validator.h" />
     <ClInclude Include="..\..\fly\utility\fly_utility.h" />
     <ClInclude Include="..\..\fly\utility\logger.h" />
     <ClInclude Include="..\..\fly\utility\result_loader.h" />
