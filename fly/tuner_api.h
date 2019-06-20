@@ -391,65 +391,6 @@ public:
       */
     void downloadPersistentArgument(const OutputDescriptor& output) const;
 
-    /** @fn std::vector<ComputationResult> tuneKernel(const KernelId id)
-      * Starts the tuning process for specified kernel. Creates configuration space based on combinations of provided kernel parameters and
-      * constraints. The configurations will be launched in order that depends on specified ::SearchMethod. Tuning will end when all configurations
-      * are explored.
-      * @param id Id of kernel for which the tuning will start.
-      * @return Vector of objects containing information about computation using tested kernel configurations. See ComputationResult for more
-      * information.
-      */
-    std::vector<ComputationResult> tuneKernel(const KernelId id);
-
-    /** @fn std::vector<ComputationResult> tuneKernel(const KernelId id, std::unique_ptr<StopCondition> stopCondition)
-      * Starts the tuning process for specified kernel. Creates configuration space based on combinations of provided kernel parameters and
-      * constraints. The configurations will be launched in order that depends on specified ::SearchMethod. Tuning will end either when all
-      * configurations are explored or when specified stop condition is met.
-      * @param id Id of kernel for which the tuning will start.
-      * @param stopCondition Stop condition which decides whether to continue the tuning process. See StopCondition for more information.
-      * @return Vector of objects containing information about computation using tested kernel configurations. See ComputationResult for more
-      * information.
-      */
-    std::vector<ComputationResult> tuneKernel(const KernelId id, std::unique_ptr<StopCondition> stopCondition);
-
-    /** @fn std::vector<ComputationResult> dryTuneKernel(const KernelId id, const std::string& filePath, const size_t iterations = 0)
-      * Starts the simulated tuning process for specified kernel (kernel is not tuned, execution times are read from CSV). Creates configuration
-      * space based on combinations of provided kernel parameters and constraints. The configurations will be launched in order that depends on
-      * specified ::SearchMethod. This method can be used to test behaviour and performance of newly implemented search methods. Note that no checks
-      * are performed whether the tuning data relates to kernel, tuning parameters or hardware. It is up to user to ensure that dryTuneKernel() reads
-      * a valid file.
-      * @param id Id of kernel for which the tuning begins.
-      * @param filePath Path to CSV file with tuning parameters.
-      * @param iterations Number of iterations performed, 0 = scan whole tuning space.
-      * @return Vector of objects containing information about computation using tested kernel configurations. See ComputationResult for more
-      * information.
-      */
-    std::vector<ComputationResult> dryTuneKernel(const KernelId id, const std::string& filePath, const size_t iterations = 0);
-
-    /** @fn ComputationResult tuneKernelByStep(const KernelId id, const std::vector<OutputDescriptor>& output)
-      * Performs one step of the tuning process for specified kernel. When this method is called inside tuner for the first time, it creates
-      * configuration space based on combinations of provided kernel parameters and constraints. Each time this method is called, it launches single
-      * kernel configuration. If all configurations were already tested, runs kernel using the best configuration. Output data can be retrieved
-      * by providing output descriptors. Always performs recomputation of reference output.
-      * @param id Id of kernel for which the tuning by step will start.
-      * @param output User-provided memory locations for kernel arguments which should be retrieved. See OutputDescriptor for more information.
-      * @return Object containing information about computation using current kernel configuration. See ComputationResult for more information.
-      */
-    ComputationResult tuneKernelByStep(const KernelId id, const std::vector<OutputDescriptor>& output);
-
-    /** @fn ComputationResult tuneKernelByStep(const KernelId id, const std::vector<OutputDescriptor>& output, const bool recomputeReference)
-      * Performs one step of the tuning process for specified kernel. When this method is called inside tuner for the first time, it creates
-      * configuration space based on combinations of provided kernel parameters and constraints. Each time this method is called, it launches single
-      * kernel configuration. If all configurations were already tested, runs kernel using the best configuration. Output data can be retrieved
-      * by providing output descriptors. Allows control over recomputation of reference output.
-      * @param id Id of kernel for which the tuning by step will start.
-      * @param output User-provided memory locations for kernel arguments which should be retrieved. See OutputDescriptor for more information.
-      * @param recomputeReference Flag which controls whether recomputation of reference output should be performed or not. Useful if kernel data
-      * between individual method invocations sometimes change.
-      * @return Object containing information about computation using current kernel configuration. See ComputationResult for more information.
-      */
-    ComputationResult tuneKernelByStep(const KernelId id, const std::vector<OutputDescriptor>& output, const bool recomputeReference);
-
     /** @fn ComputationResult runKernel(const KernelId id, const std::vector<ParameterPair>& configuration,
       * const std::vector<OutputDescriptor>& output)
       * Runs specified kernel using provided configuration.
@@ -460,22 +401,7 @@ public:
       */
     ComputationResult runKernel(const KernelId id, const std::vector<ParameterPair>& configuration, const std::vector<OutputDescriptor>& output);
 
-    /** @fn void clearKernelData(const KernelId id, const bool clearConfigurations)
-      * Resets tuning process and clears tuning results for specified kernel.
-      * @param id Id of kernel whose data will be cleared.
-      * @param clearConfigurations If true, generated kernel configurations will be cleared as well. Otherwise, they will remain inside tuner.
-      */
-    void clearKernelData(const KernelId id, const bool clearConfigurations);
-
-    /** @fn void setKernelProfiling(const bool flag)
-      * Toggles profiling of kernel runs inside the tuner. Profiled kernel runs generate profiling counters which can be used by searchers and stop
-      * conditions for more accurate performance measurement. Profiling counters can also be retrieved through API and printed into CSV file with
-      * tuning results. Note that enabling profiling will result in longer tuning times because profiled kernels have to be launched multiple times
-      * with the same configuration in order to collect all profiling counters. Asynchronous kernel launches are currently not supported when kernel
-      * profiling is enabled. Kernel profiling is disabled by default.
-      * @param flag If true, kernel profiling is enabled. It is disabled otherwise.
-      */
-    void setKernelProfiling(const bool flag);
+   
 
     /** @fn void setCompositionKernelProfiling(const KernelId compositionId, const KernelId kernelId, const bool flag)
       * Toggles profiling of a specific kernel inside kernel composition. This is useful if only some kernels inside the composition need to be
@@ -496,18 +422,7 @@ public:
       */
     void setKernelProfilingCounters(const std::vector<std::string>& counterNames);
 
-    /** @fn void setSearchMethod(const SearchMethod method, const std::vector<double>& arguments)
-      * Specifies search method which will be used during kernel tuning. Number of required search arguments depends on the search method.
-      * Default search method is full search.
-      * @param method Search method which will be used during kernel tuning. See SearchMethod for more information.
-      * @param arguments Arguments necessary for specified search method to work. Following arguments are required for corresponding search method,
-      * the order of arguments is important:
-      * - FullSearch - none
-      * - RandomSearch - none
-      * - Annealing - maximum temperature
-      * - MCMC - none
-      */
-    void setSearchMethod(const SearchMethod method, const std::vector<double>& arguments);
+  
 
     /** @fn void setPrintingTimeUnit(const TimeUnit unit)
       * Sets time unit used for printing of results. Default time unit is milliseconds. 
@@ -540,13 +455,7 @@ public:
       */
     void printResult(const KernelId id, const std::string& filePath, const PrintFormat format) const;
 
-    /** @fn ComputationResult getBestComputationResult(const KernelId id) const
-      * Returns the best computation result found for specified kernel. Valid result will be returned only if one of the kernel tuning methods was
-      * already called for corresponding kernel.
-      * @param id Id of kernel for which the best result will be returned.
-      * @return Object containing information about best computation result for specified kernel. See ComputationResult for more information.
-      */
-    ComputationResult getBestComputationResult(const KernelId id) const;
+   
 
     /** @fn std::string getKernelSource(const KernelId id, const std::vector<ParameterPair>& configuration) const
       * Returns kernel source with preprocessor definitions for specified kernel based on provided configuration.

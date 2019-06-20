@@ -1,0 +1,4 @@
+/platform/win/*.opensdf
+/platform/win/x64/Release
+/platform/win/*.suo
+/platform/win/*.sdf

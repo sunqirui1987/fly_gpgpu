@@ -299,70 +299,6 @@ void Tuner::downloadPersistentArgument(const OutputDescriptor& output) const
     }
 }
 
-std::vector<ComputationResult> Tuner::tuneKernel(const KernelId id)
-{
-    try
-    {
-        return tunerCore->tuneKernel(id, nullptr);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
-
-std::vector<ComputationResult> Tuner::tuneKernel(const KernelId id, std::unique_ptr<StopCondition> stopCondition)
-{
-    try
-    {
-        return tunerCore->tuneKernel(id, std::move(stopCondition));
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
-
-std::vector<ComputationResult> Tuner::dryTuneKernel(const KernelId id, const std::string& filePath, const size_t iterations)
-{
-    try
-    {
-        return tunerCore->dryTuneKernel(id, filePath, iterations);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
-
-ComputationResult Tuner::tuneKernelByStep(const KernelId id, const std::vector<OutputDescriptor>& output)
-{
-    try
-    {
-        return tunerCore->tuneKernelByStep(id, output, true);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
-
-ComputationResult Tuner::tuneKernelByStep(const KernelId id, const std::vector<OutputDescriptor>& output, const bool recomputeReference)
-{
-    try
-    {
-        return tunerCore->tuneKernelByStep(id, output, recomputeReference);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
 
 ComputationResult Tuner::runKernel(const KernelId id, const std::vector<ParameterPair>& configuration, const std::vector<OutputDescriptor>& output)
 {
@@ -377,23 +313,7 @@ ComputationResult Tuner::runKernel(const KernelId id, const std::vector<Paramete
     }
 }
 
-void Tuner::clearKernelData(const KernelId id, const bool clearConfigurations)
-{
-    tunerCore->clearKernelData(id, clearConfigurations);
-}
 
-void Tuner::setKernelProfiling(const bool flag)
-{
-    try
-    {
-        tunerCore->setKernelProfiling(flag);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
 
 void Tuner::setCompositionKernelProfiling(const KernelId compositionId, const KernelId kernelId, const bool flag)
 {
@@ -421,18 +341,6 @@ void Tuner::setKernelProfilingCounters(const std::vector<std::string>& counterNa
     }
 }
 
-void Tuner::setSearchMethod(const SearchMethod method, const std::vector<double>& arguments)
-{
-    try
-    {
-        tunerCore->setSearchMethod(method, arguments);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
 
 void Tuner::setPrintingTimeUnit(const TimeUnit unit)
 {
@@ -468,18 +376,7 @@ void Tuner::printResult(const KernelId id, const std::string& filePath, const Pr
     }
 }
 
-ComputationResult Tuner::getBestComputationResult(const KernelId id) const
-{
-    try
-    {
-        return tunerCore->getBestComputationResult(id);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
+
 
 std::string Tuner::getKernelSource(const KernelId id, const std::vector<ParameterPair>& configuration) const
 {

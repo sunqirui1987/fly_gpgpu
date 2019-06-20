@@ -3,12 +3,12 @@
 #include <fstream>
 #include <memory>
 #include <vector>
+#include "fly/api/computation_result.h"
 #include "fly/compute_engine/compute_engine.h"
 #include "fly/enum/compute_api.h"
 #include "fly/kernel/kernel_manager.h"
 #include "fly/kernel_argument/argument_manager.h"
 #include "fly/tuning_runner/kernel_runner.h"
-#include "fly/tuning_runner/tuning_runner.h"
 #include "fly/utility/logger.h"
 #include "fly/utility/result_loader.h"
 #include "fly/utility/result_printer.h"
@@ -68,14 +68,6 @@ public:
         const std::vector<ArgumentId>& validatedArgumentIds);
     void setReferenceClass(const KernelId id, std::unique_ptr<ReferenceClass> referenceClass, const std::vector<ArgumentId>& validatedArgumentIds);
 
-    // Tuning runner methods
-    std::vector<ComputationResult> tuneKernel(const KernelId id, std::unique_ptr<StopCondition> stopCondition);
-    std::vector<ComputationResult> dryTuneKernel(const KernelId id, const std::string& filePath, const size_t iterations);
-    ComputationResult tuneKernelByStep(const KernelId id, const std::vector<OutputDescriptor>& output, const bool recomputeReference);
-    void clearKernelData(const KernelId id, const bool clearConfigurations);
-    void setKernelProfiling(const bool flag);
-    void setSearchMethod(const SearchMethod method, const std::vector<double>& arguments);
-    ComputationResult getBestComputationResult(const KernelId id) const;
 
     // Result printer methods
     void setPrintingTimeUnit(const TimeUnit unit);
@@ -109,7 +101,6 @@ private:
     ResultPrinter resultPrinter;
     std::unique_ptr<ComputeEngine> computeEngine;
     std::unique_ptr<KernelRunner> kernelRunner;
-    std::unique_ptr<TuningRunner> tuningRunner;
 };
 
 } // namespace fly
