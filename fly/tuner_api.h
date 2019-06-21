@@ -64,11 +64,11 @@ namespace fly
         ~Tuner();
 
         /**
-          * ´Ó×Ö·û´®ÄÚµÄÔ´´úÂëÏòtunerÌí¼ÓĞÂµÄÄÚºË¡£ÒªÇóÖ¸¶¨ÄÚºËÃû³ÆºÍÄ¬ÈÏµÄÈ«¾ÖºÍ±¾µØÏß³Ì´óĞ¡¡£
-          * @param source Kernel Ô´´úÂë¡£
-          * @param kernelName ÄÚºËÔ´´úÂëÖĞÄÚºËº¯ÊıµÄÃû³Æ
-          * @param globalSize »ù±¾ÄÚºËÈ«¾Ö´óĞ¡µÄÎ¬¶È (eg. grid size in CUDA).
-          * @param localSize »ù±¾ÄÚºË±¾µØ´óĞ¡µÄÎ¬¶È (eg. block size in CUDA).
+          * ä»å­—ç¬¦ä¸²å†…çš„æºä»£ç å‘tuneræ·»åŠ æ–°çš„å†…æ ¸ã€‚è¦æ±‚æŒ‡å®šå†…æ ¸åç§°å’Œé»˜è®¤çš„å…¨å±€å’Œæœ¬åœ°çº¿ç¨‹å¤§å°ã€‚
+          * @param source Kernel æºä»£ç ã€‚
+          * @param kernelName å†…æ ¸æºä»£ç ä¸­å†…æ ¸å‡½æ•°çš„åç§°
+          * @param globalSize åŸºæœ¬å†…æ ¸å…¨å±€å¤§å°çš„ç»´åº¦ (eg. grid size in CUDA).
+          * @param localSize åŸºæœ¬å†…æ ¸æœ¬åœ°å¤§å°çš„ç»´åº¦ (eg. block size in CUDA).
           * @return Id  KernelId
           */
         KernelId addKernel(const std::string& source, const std::string& kernelName, const DimensionVector& globalSize,
@@ -79,26 +79,26 @@ namespace fly
             const DimensionVector& localSize);
 
         /**
-          * Í¨¹ıÌá¹©ÏàÓ¦µÄ²ÎÊıidÎªÖ¸¶¨µÄÄÚºËÉèÖÃÄÚºË²ÎÊı¡£
+          * é€šè¿‡æä¾›ç›¸åº”çš„å‚æ•°idä¸ºæŒ‡å®šçš„å†…æ ¸è®¾ç½®å†…æ ¸å‚æ•°ã€‚
           * @param id KernelId
-          * @param argumentIds Ö¸¶¨ÄÚºËÊ¹ÓÃµÄ²ÎÊıµÄid¡£idµÄË³Ğò±ØĞëÓëÖ¸¶¨µÄÄÚºË²ÎÊıµÄË³ĞòÆ¥Åä
+          * @param argumentIds æŒ‡å®šå†…æ ¸ä½¿ç”¨çš„å‚æ•°çš„idã€‚idçš„é¡ºåºå¿…é¡»ä¸æŒ‡å®šçš„å†…æ ¸å‚æ•°çš„é¡ºåºåŒ¹é…
           */
         void setKernelArguments(const KernelId id, const std::vector<ArgumentId>& argumentIds);
 
-        /** ÎªÖ¸¶¨µÄÄÚºËÌí¼Ó³£Á¿¡£
+        /** ä¸ºæŒ‡å®šçš„å†…æ ¸æ·»åŠ å¸¸é‡ã€‚
         * @param id Id of kernel for which the constraint will be added.
-        * @param parameterNames ²ÎÊıµÄÃû³Æ
-        * @param constraintFunction º¯Êı£¬Èç¹ûÌá¹©µÄ²ÎÊıÖµ×éºÏÓĞĞ§£¬Ôò·µ»Øtrue¡£·µ»Øfalse,·ñÔò.
+        * @param parameterNames å‚æ•°çš„åç§°
+        * @param constraintFunction å‡½æ•°ï¼Œå¦‚æœæä¾›çš„å‚æ•°å€¼ç»„åˆæœ‰æ•ˆï¼Œåˆ™è¿”å›trueã€‚è¿”å›false,å¦åˆ™.
         */
         void addConstraint(const KernelId id, const std::vector<std::string>& parameterNames,
             const std::function<bool(const std::vector<size_t>&)>& constraintFunction);
 
 
-        /** ÎªÖ¸¶¨µÄÄÚºËÌí¼ÓĞÂµÄÕûÊı²ÎÊı£¬Ìá¹©²ÎÊıÃû³ÆºÍÔÊĞíÖµµÄÁĞ±í¡£
-           µ±Æô¶¯ÏàÓ¦µÄÄÚºËÊ±£¬²ÎÊı½«×÷ÎªÔ¤´¦ÀíÆ÷¶¨ÒåÌí¼Óµ½ÄÚºËÔ´´úÂëÖĞ¡£
+        /** ä¸ºæŒ‡å®šçš„å†…æ ¸æ·»åŠ æ–°çš„æ•´æ•°å‚æ•°ï¼Œæä¾›å‚æ•°åç§°å’Œå…è®¸å€¼çš„åˆ—è¡¨ã€‚
+           å½“å¯åŠ¨ç›¸åº”çš„å†…æ ¸æ—¶ï¼Œå‚æ•°å°†ä½œä¸ºé¢„å¤„ç†å™¨å®šä¹‰æ·»åŠ åˆ°å†…æ ¸æºä»£ç ä¸­ã€‚
            * @param id KernelId
-           * @param parameterName  ²ÎÊıµÄÃû³Æ
-           * @param parameterValues intÊı×é
+           * @param parameterName  å‚æ•°çš„åç§°
+           * @param parameterValues intæ•°ç»„
            */
         void addParameter(const KernelId id, const std::string& parameterName, const std::vector<size_t>& parameterValues);
 
@@ -108,7 +108,7 @@ namespace fly
 
         void addParameterPack(const KernelId id, const std::string& packName, const std::vector<std::string>& parameterNames);
 
-        /** ÎªÖ¸¶¨µÄÄÚºËÉèÖÃÏß³ÌĞŞÊÎ·ûº¯Êı¡£
+        /** ä¸ºæŒ‡å®šçš„å†…æ ¸è®¾ç½®çº¿ç¨‹ä¿®é¥°ç¬¦å‡½æ•°ã€‚
           */
         void setThreadModifier(const KernelId id, const ModifierType modifierType, const ModifierDimension modifierDimension,
             const std::vector<std::string>& parameterNames, const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction);
