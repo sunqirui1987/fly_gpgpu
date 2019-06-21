@@ -47,13 +47,12 @@ private:
   
 
     TimeUnit timeUnit;
-    bool kernelProfilingFlag;
+
 
     // Helper methods
     KernelResult runKernelSimple(const Kernel& kernel, const KernelRunMode mode, const KernelConfiguration& configuration,
         const std::vector<OutputDescriptor>& output);
-    KernelResult runSimpleKernelProfiling(const Kernel& kernel, const KernelRunMode mode, const KernelRuntimeData& kernelData,
-        const std::vector<OutputDescriptor>& output);
+
     
 };
 

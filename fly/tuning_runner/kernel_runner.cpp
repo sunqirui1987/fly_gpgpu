@@ -15,8 +15,7 @@ KernelRunner::KernelRunner(ArgumentManager* argumentManager, KernelManager* kern
     argumentManager(argumentManager),
     kernelManager(kernelManager),
     computeEngine(computeEngine),
-    timeUnit(TimeUnit::Milliseconds),
-    kernelProfilingFlag(false)
+    timeUnit(TimeUnit::Milliseconds)
 {}
 
 KernelResult KernelRunner::runKernel(const KernelId id, const KernelRunMode mode, const KernelConfiguration& configuration,
@@ -63,15 +62,7 @@ void KernelRunner::setTimeUnit(const TimeUnit unit)
     this->timeUnit = unit;
 }
 
-void KernelRunner::setKernelProfiling(const bool flag)
-{
-    kernelProfilingFlag = flag;
-}
 
-bool KernelRunner::getKernelProfiling()
-{
-    return kernelProfilingFlag;
-}
 
 KernelArgument KernelRunner::downloadArgument(const ArgumentId id) const
 {
@@ -104,56 +95,12 @@ KernelResult KernelRunner::runKernelSimple(const Kernel& kernel, const KernelRun
         configuration.getParameterPairs(), kernel.getArgumentIds(), configuration.getLocalMemoryModifiers());
 
     KernelResult result;
-    if (kernelProfilingFlag)
-    {
-        result = runSimpleKernelProfiling(kernel, mode, kernelData, output);
-    }
-    else
-    {
-        result = computeEngine->runKernel(kernelData, argumentManager->getArguments(kernel.getArgumentIds()), output);
-    }
+    result = computeEngine->runKernel(kernelData, argumentManager->getArguments(kernel.getArgumentIds()), output);
 
     result.setConfiguration(configuration);
     return result;
 }
 
-KernelResult KernelRunner::runSimpleKernelProfiling(const Kernel& kernel, const KernelRunMode mode, const KernelRuntimeData& kernelData,
-    const std::vector<OutputDescriptor>& output)
-{
-    EventId id = computeEngine->runKernelWithProfiling(kernelData, argumentManager->getArguments(kernel.getArgumentIds()),
-        computeEngine->getDefaultQueue());
-    KernelResult result;
-
-    if (mode == KernelRunMode::OfflineTuning)
-    {
-        while (computeEngine->getRemainingKernelProfilingRuns(kernelData.getName(), kernelData.getSource()) > 0)
-        {
-            if (computeEngine->getRemainingKernelProfilingRuns(kernelData.getName(), kernelData.getSource()) > 1)
-            {
-                computeEngine->clearBuffers(ArgumentAccessType::ReadWrite);
-                computeEngine->clearBuffers(ArgumentAccessType::WriteOnly);
-            }
-            computeEngine->runKernelWithProfiling(kernelData, argumentManager->getArguments(kernel.getArgumentIds()),
-                computeEngine->getDefaultQueue());
-        }
-        result = computeEngine->getKernelResultWithProfiling(id, output);
-    }
-    else
-    {
-        const uint64_t remainingRuns = computeEngine->getRemainingKernelProfilingRuns(kernelData.getName(), kernelData.getSource());
-        if (remainingRuns == 0)
-        {
-            result = computeEngine->getKernelResultWithProfiling(id, output);
-        }
-        else
-        {
-            result = computeEngine->getKernelResult(id, output);
-            result.setProfilingData(KernelProfilingData(remainingRuns));
-        }
-    }
-
-    return result;
-}
 
 
 

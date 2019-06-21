@@ -36,16 +36,11 @@ public:
         const std::vector<std::string>& parameterNames, const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction);
     void setLocalMemoryModifier(const KernelId id, const ArgumentId argumentId, const std::vector<std::string>& parameterNames,
         const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction);
-    void setCompositionKernelThreadModifier(const KernelId compositionId, const KernelId kernelId, const ModifierType modifierType,
-        const ModifierDimension modifierDimension, const std::vector<std::string>& parameterNames,
-        const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction);
-    void setCompositionKernelLocalMemoryModifier(const KernelId compositionId, const KernelId kernelId, const ArgumentId argumentId,
-        const std::vector<std::string>& parameterNames, const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction);
+   
+   
     void setKernelArguments(const KernelId id, const std::vector<ArgumentId>& argumentIds);
-    void setCompositionKernelArguments(const KernelId compositionId, const KernelId kernelId, const std::vector<ArgumentId>& argumentIds);
     std::string getKernelSource(const KernelId id, const std::vector<ParameterPair>& configuration) const;
-    void setCompositionKernelProfiling(const KernelId compositionId, const KernelId kernelId, const bool flag);
-
+ 
     // Argument manager methods
     ArgumentId addArgument(void* data, const size_t numberOfElements, const size_t elementSizeInBytes, const ArgumentDataType dataType,
         const ArgumentMemoryLocation memoryLocation, const ArgumentAccessType accessType, const ArgumentUploadType uploadType,
@@ -69,8 +64,7 @@ public:
     std::vector<PlatformInfo> getPlatformInfo() const;
     std::vector<DeviceInfo> getDeviceInfo(const PlatformIndex platform) const;
     DeviceInfo getCurrentDeviceInfo() const;
-    void setKernelProfilingCounters(const std::vector<std::string>& counterNames);
-
+  
     // Logger methods
     static void setLoggingLevel(const LoggingLevel level);
     static void setLoggingTarget(std::ostream& outputTarget);

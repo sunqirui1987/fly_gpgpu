@@ -11,9 +11,6 @@
     <Filter Include="fly\api">
       <UniqueIdentifier>{6150b376-d424-45c2-a703-9bcde11f43fa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="fly\api\stop_condition">
-      <UniqueIdentifier>{16f0cf9e-0b0c-4887-8515-0d35581128e8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="fly\compute_engine">
       <UniqueIdentifier>{6e9f2655-5854-4a25-985a-7d7667e09fc1}</UniqueIdentifier>
     </Filter>
@@ -56,12 +53,6 @@
       <Filter>fly\api</Filter>
     </ClCompile>
     <ClCompile Include="..\..\fly\api\dimension_vector.cpp">
-      <Filter>fly\api</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\fly\api\kernel_profiling_counter.cpp">
-      <Filter>fly\api</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\fly\api\kernel_profiling_data.cpp">
       <Filter>fly\api</Filter>
     </ClCompile>
     <ClCompile Include="..\..\fly\api\output_descriptor.cpp">
@@ -121,9 +112,6 @@
     <ClCompile Include="..\..\fly\kernel\kernel.cpp">
       <Filter>fly\kernel</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\fly\kernel\kernel_composition.cpp">
-      <Filter>fly\kernel</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\fly\kernel_argument\argument_manager.cpp">
       <Filter>fly\kernel_argument</Filter>
     </ClCompile>
@@ -159,12 +147,6 @@
     <ClInclude Include="..\..\fly\api\dimension_vector.h">
       <Filter>fly\api</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\fly\api\kernel_profiling_counter.h">
-      <Filter>fly\api</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\api\kernel_profiling_data.h">
-      <Filter>fly\api</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\fly\api\output_descriptor.h">
       <Filter>fly\api</Filter>
     </ClInclude>
@@ -173,21 +155,6 @@
     </ClInclude>
     <ClInclude Include="..\..\fly\api\platform_info.h">
       <Filter>fly\api</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\api\stop_condition\configuration_duration.h">
-      <Filter>fly\api\stop_condition</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\api\stop_condition\configuration_fraction.h">
-      <Filter>fly\api\stop_condition</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\api\stop_condition\stop_condition.h">
-      <Filter>fly\api\stop_condition</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\api\stop_condition\tuning_duration.h">
-      <Filter>fly\api\stop_condition</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\api\stop_condition\configuration_count.h">
-      <Filter>fly\api\stop_condition</Filter>
     </ClInclude>
     <ClInclude Include="..\..\fly\compute_engine\compute_engine.h">
       <Filter>fly\compute_engine</Filter>
@@ -205,12 +172,6 @@
       <Filter>fly\compute_engine\cuda</Filter>
     </ClInclude>
     <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_kernel.h">
-      <Filter>fly\compute_engine\cuda</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_profiling_metric.h">
-      <Filter>fly\compute_engine\cuda</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_profiling_state.h">
       <Filter>fly\compute_engine\cuda</Filter>
     </ClInclude>
     <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_program.h">
@@ -342,9 +303,6 @@
     <ClInclude Include="..\..\fly\enum\dimension_vector_type.h">
       <Filter>fly\enum</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\fly\enum\enum_bitfield.h">
-      <Filter>fly\enum</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\fly\enum\global_size_type.h">
       <Filter>fly\enum</Filter>
     </ClInclude>
@@ -377,9 +335,6 @@
     </ClInclude>
     <ClInclude Include="..\..\fly\enum\argument_memory_location.h">
       <Filter>fly\enum</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\kernel\kernel_composition.h">
-      <Filter>fly\kernel</Filter>
     </ClInclude>
     <ClInclude Include="..\..\fly\kernel\kernel_configuration.h">
       <Filter>fly\kernel</Filter>

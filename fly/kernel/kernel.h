@@ -34,8 +34,7 @@ public:
     void setLocalMemoryModifier(const ArgumentId argumentId, const std::vector<std::string>& parameterNames,
         const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction);
     void setArguments(const std::vector<ArgumentId>& argumentIds);
-    void setTuningManipulatorFlag(const bool flag);
-
+ 
     // Getters
     KernelId getId() const;
     const std::string& getSource() const;
@@ -54,7 +53,7 @@ public:
     const std::vector<ArgumentId>& getArgumentIds() const;
     std::vector<LocalMemoryModifier> getLocalMemoryModifiers(const std::vector<ParameterPair>& parameterPairs) const;
     bool hasParameter(const std::string& parameterName) const;
-    bool hasTuningManipulator() const;
+
 
 private:
     // Attributes
@@ -73,8 +72,7 @@ private:
     std::array<std::function<size_t(const size_t, const std::vector<size_t>&)>, 3> localThreadModifiers;
     std::map<ArgumentId, std::vector<std::string>> localMemoryModifierNames;
     std::map<ArgumentId, std::function<size_t(const size_t, const std::vector<size_t>&)>> localMemoryModifiers;
-    bool tuningManipulatorFlag;
-
+  
     void validateModifierParameters(const std::vector<std::string>& parameterNames) const;
 };
 

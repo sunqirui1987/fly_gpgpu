@@ -18,25 +18,6 @@ ComputationResult::ComputationResult(const std::string& kernelName, const std::v
     configuration(configuration)
 {}
 
-ComputationResult::ComputationResult(const std::string& kernelName, const std::vector<ParameterPair>& configuration, const uint64_t duration,
-    const KernelProfilingData& profilingData) :
-    status(true),
-    duration(duration),
-    kernelName(kernelName),
-    errorMessage(""),
-    configuration(configuration),
-    profilingData(profilingData)
-{}
-
-ComputationResult::ComputationResult(const std::string& compositionName, const std::vector<ParameterPair>& configuration, const uint64_t duration,
-    const std::map<KernelId, KernelProfilingData>& compositionProfilingData) :
-    status(true),
-    duration(duration),
-    kernelName(compositionName),
-    errorMessage(""),
-    configuration(configuration),
-    compositionProfilingData(compositionProfilingData)
-{}
 
 ComputationResult::ComputationResult(const std::string& kernelName, const std::vector<ParameterPair>& configuration,
     const std::string& errorMessage) :
@@ -72,14 +53,6 @@ const std::vector<ParameterPair>& ComputationResult::getConfiguration() const
     return configuration;
 }
 
-const KernelProfilingData& ComputationResult::getProfilingData() const
-{
-    return profilingData;
-}
 
-const std::map<KernelId, KernelProfilingData>& ComputationResult::getCompositionProfilingData() const
-{
-    return compositionProfilingData;
-}
 
 } // namespace fly

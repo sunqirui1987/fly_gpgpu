@@ -22,8 +22,6 @@
     <ClCompile Include="..\..\fly\api\computation_result.cpp" />
     <ClCompile Include="..\..\fly\api\device_info.cpp" />
     <ClCompile Include="..\..\fly\api\dimension_vector.cpp" />
-    <ClCompile Include="..\..\fly\api\kernel_profiling_counter.cpp" />
-    <ClCompile Include="..\..\fly\api\kernel_profiling_data.cpp" />
     <ClCompile Include="..\..\fly\api\output_descriptor.cpp" />
     <ClCompile Include="..\..\fly\api\parameter_pair.cpp" />
     <ClCompile Include="..\..\fly\api\platform_info.cpp" />
@@ -38,7 +36,6 @@
     <ClCompile Include="..\..\fly\dto\kernel_runtime_data.cpp" />
     <ClCompile Include="..\..\fly\dto\local_memory_modifier.cpp" />
     <ClCompile Include="..\..\fly\kernel\kernel.cpp" />
-    <ClCompile Include="..\..\fly\kernel\kernel_composition.cpp" />
     <ClCompile Include="..\..\fly\kernel\kernel_configuration.cpp" />
     <ClCompile Include="..\..\fly\kernel\kernel_constraint.cpp" />
     <ClCompile Include="..\..\fly\kernel\kernel_manager.cpp" />
@@ -57,16 +54,9 @@
     <ClInclude Include="..\..\fly\api\computation_result.h" />
     <ClInclude Include="..\..\fly\api\device_info.h" />
     <ClInclude Include="..\..\fly\api\dimension_vector.h" />
-    <ClInclude Include="..\..\fly\api\kernel_profiling_counter.h" />
-    <ClInclude Include="..\..\fly\api\kernel_profiling_data.h" />
     <ClInclude Include="..\..\fly\api\output_descriptor.h" />
     <ClInclude Include="..\..\fly\api\parameter_pair.h" />
     <ClInclude Include="..\..\fly\api\platform_info.h" />
-    <ClInclude Include="..\..\fly\api\stop_condition\configuration_count.h" />
-    <ClInclude Include="..\..\fly\api\stop_condition\configuration_duration.h" />
-    <ClInclude Include="..\..\fly\api\stop_condition\configuration_fraction.h" />
-    <ClInclude Include="..\..\fly\api\stop_condition\stop_condition.h" />
-    <ClInclude Include="..\..\fly\api\stop_condition\tuning_duration.h" />
     <ClInclude Include="..\..\fly\compute_engine\compute_engine.h" />
     <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_buffer.h" />
     <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_context.h" />
@@ -74,8 +64,6 @@
     <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_engine.h" />
     <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_event.h" />
     <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_kernel.h" />
-    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_profiling_metric.h" />
-    <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_profiling_state.h" />
     <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_program.h" />
     <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_stream.h" />
     <ClInclude Include="..\..\fly\compute_engine\cuda\cuda_utility.h" />
@@ -121,7 +109,6 @@
     <ClInclude Include="..\..\fly\enum\compute_api.h" />
     <ClInclude Include="..\..\fly\enum\device_type.h" />
     <ClInclude Include="..\..\fly\enum\dimension_vector_type.h" />
-    <ClInclude Include="..\..\fly\enum\enum_bitfield.h" />
     <ClInclude Include="..\..\fly\enum\global_size_type.h" />
     <ClInclude Include="..\..\fly\enum\kernel_run_mode.h" />
     <ClInclude Include="..\..\fly\enum\logging_level.h" />
@@ -134,7 +121,6 @@
     <ClInclude Include="..\..\fly\fly_types.h" />
     <ClInclude Include="..\..\fly\half.h" />
     <ClInclude Include="..\..\fly\kernel\kernel.h" />
-    <ClInclude Include="..\..\fly\kernel\kernel_composition.h" />
     <ClInclude Include="..\..\fly\kernel\kernel_configuration.h" />
     <ClInclude Include="..\..\fly\kernel\kernel_constraint.h" />
     <ClInclude Include="..\..\fly\kernel\kernel_manager.h" />

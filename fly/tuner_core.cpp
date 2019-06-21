@@ -97,18 +97,6 @@ void TunerCore::setLocalMemoryModifier(const KernelId id, const ArgumentId argum
     kernelManager.setLocalMemoryModifier(id, argumentId, parameterNames, modifierFunction);
 }
 
-void TunerCore::setCompositionKernelThreadModifier(const KernelId compositionId, const KernelId kernelId, const ModifierType modifierType,
-    const ModifierDimension modifierDimension, const std::vector<std::string>& parameterNames,
-    const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction)
-{
-    kernelManager.setCompositionKernelThreadModifier(compositionId, kernelId, modifierType, modifierDimension, parameterNames, modifierFunction);
-}
-
-void TunerCore::setCompositionKernelLocalMemoryModifier(const KernelId compositionId, const KernelId kernelId, const ArgumentId argumentId,
-    const std::vector<std::string>& parameterNames, const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction)
-{
-    kernelManager.setCompositionKernelLocalMemoryModifier(compositionId, kernelId, argumentId, parameterNames, modifierFunction);
-}
 
 void TunerCore::setKernelArguments(const KernelId id, const std::vector<ArgumentId>& argumentIds)
 {
@@ -128,24 +116,6 @@ void TunerCore::setKernelArguments(const KernelId id, const std::vector<Argument
     kernelManager.setArguments(id, argumentIds);
 }
 
-void TunerCore::setCompositionKernelArguments(const KernelId compositionId, const KernelId kernelId, const std::vector<ArgumentId>& argumentIds)
-{
-    for (const auto id : argumentIds)
-    {
-        if (id >= argumentManager.getArgumentCount())
-        {
-            throw std::runtime_error(std::string("Invalid kernel argument id: ") + std::to_string(id));
-        }
-    }
-
-    if (!containsUnique(argumentIds))
-    {
-        throw std::runtime_error("Kernel argument ids assigned to single kernel must be unique");
-    }
-
-    kernelManager.setCompositionKernelArguments(compositionId, kernelId, argumentIds);
-}
-
 std::string TunerCore::getKernelSource(const KernelId id, const std::vector<ParameterPair>& configuration) const
 {
     if (!kernelManager.isKernel(id))
@@ -155,10 +125,6 @@ std::string TunerCore::getKernelSource(const KernelId id, const std::vector<Para
     return kernelManager.getKernelSourceWithDefines(id, configuration);
 }
 
-void TunerCore::setCompositionKernelProfiling(const KernelId compositionId, const KernelId kernelId, const bool flag)
-{
-    kernelManager.setCompositionKernelProfiling(compositionId, kernelId, flag);
-}
 
 ArgumentId TunerCore::addArgument(void* data, const size_t numberOfElements, const size_t elementSizeInBytes, const ArgumentDataType dataType,
     const ArgumentMemoryLocation memoryLocation, const ArgumentAccessType accessType, const ArgumentUploadType uploadType, const bool copyData)
@@ -183,16 +149,7 @@ ComputationResult TunerCore::runKernel(const KernelId id, const std::vector<Para
 
     if (result.isValid())
     {
-        if (kernelManager.isComposition(id))
-        {
-            return ComputationResult(result.getKernelName(), result.getConfiguration().getParameterPairs(), result.getComputationDuration(),
-                result.getCompositionProfilingData());
-        }
-        else
-        {
-            return ComputationResult(result.getKernelName(), result.getConfiguration().getParameterPairs(), result.getComputationDuration(),
-                result.getProfilingData());
-        }
+        return ComputationResult(result.getKernelName(), result.getConfiguration().getParameterPairs(), result.getComputationDuration());
     }
     else
     {
@@ -260,11 +217,6 @@ std::vector<DeviceInfo> TunerCore::getDeviceInfo(const PlatformIndex platform) c
 DeviceInfo TunerCore::getCurrentDeviceInfo() const
 {
     return computeEngine->getCurrentDeviceInfo();
-}
-
-void TunerCore::setKernelProfilingCounters(const std::vector<std::string>& counterNames)
-{
-    computeEngine->setKernelProfilingCounters(counterNames);
 }
 
 void TunerCore::setLoggingLevel(const LoggingLevel level)

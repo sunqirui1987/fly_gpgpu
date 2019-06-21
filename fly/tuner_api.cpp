@@ -163,74 +163,6 @@ void Tuner::addConstraint(const KernelId id, const std::vector<std::string>& par
 }
 
 
-void Tuner::setCompositionKernelThreadModifier(const KernelId compositionId, const KernelId kernelId, const ModifierType modifierType,
-    const ModifierDimension modifierDimension, const std::vector<std::string>& parameterNames,
-    const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction)
-{
-    try
-    {
-        tunerCore->setCompositionKernelThreadModifier(compositionId, kernelId, modifierType, modifierDimension, parameterNames, modifierFunction);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
-
-void Tuner::setCompositionKernelThreadModifier(const KernelId compositionId, const KernelId kernelId, const ModifierType modifierType,
-    const ModifierDimension modifierDimension, const std::string& parameterName, const ModifierAction modifierAction)
-{
-    switch (modifierAction)
-    {
-    case ModifierAction::Add:
-        setCompositionKernelThreadModifier(compositionId, kernelId, modifierType, modifierDimension, std::vector<std::string>{parameterName},
-            [](const size_t threadSize, const std::vector<size_t>& parameters) {return threadSize + parameters.at(0);});
-        break;
-    case ModifierAction::Subtract:
-        setCompositionKernelThreadModifier(compositionId, kernelId, modifierType, modifierDimension, std::vector<std::string>{parameterName},
-            [](const size_t threadSize, const std::vector<size_t>& parameters) {return threadSize - parameters.at(0);});
-        break;
-    case ModifierAction::Multiply:
-        setCompositionKernelThreadModifier(compositionId, kernelId, modifierType, modifierDimension, std::vector<std::string>{parameterName},
-            [](const size_t threadSize, const std::vector<size_t>& parameters) {return threadSize * parameters.at(0);});
-        break;
-    case ModifierAction::Divide:
-        setCompositionKernelThreadModifier(compositionId, kernelId, modifierType, modifierDimension, std::vector<std::string>{parameterName},
-            [](const size_t threadSize, const std::vector<size_t>& parameters) {return threadSize / parameters.at(0);});
-        break;
-    default:
-        throw std::runtime_error("Unknown modifier action");
-    }
-}
-
-void Tuner::setCompositionKernelLocalMemoryModifier(const KernelId compositionId, const KernelId kernelId, const ArgumentId argumentId,
-    const std::vector<std::string>& parameterNames, const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction)
-{
-    try
-    {
-        tunerCore->setCompositionKernelLocalMemoryModifier(compositionId, kernelId, argumentId, parameterNames, modifierFunction);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
-
-void Tuner::setCompositionKernelArguments(const KernelId compositionId, const KernelId kernelId, const std::vector<ArgumentId>& argumentIds)
-{
-    try
-    {
-        tunerCore->setCompositionKernelArguments(compositionId, kernelId, argumentIds);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
-
 void Tuner::persistArgument(const ArgumentId id, const bool flag)
 {
     try
@@ -272,32 +204,6 @@ ComputationResult Tuner::runKernel(const KernelId id, const std::vector<Paramete
 }
 
 
-
-void Tuner::setCompositionKernelProfiling(const KernelId compositionId, const KernelId kernelId, const bool flag)
-{
-    try
-    {
-        tunerCore->setCompositionKernelProfiling(compositionId, kernelId, flag);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
-
-void Tuner::setKernelProfilingCounters(const std::vector<std::string>& counterNames)
-{
-    try
-    {
-        tunerCore->setKernelProfilingCounters(counterNames);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-        throw;
-    }
-}
 
 
 

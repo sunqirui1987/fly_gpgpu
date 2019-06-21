@@ -12,8 +12,8 @@ Kernel::Kernel(const KernelId id, const std::string& source, const std::string& 
     source(source),
     name(name),
     globalSize(globalSize),
-    localSize(localSize),
-    tuningManipulatorFlag(false)
+    localSize(localSize)
+   
 {
     globalThreadModifiers[0] = nullptr;
     globalThreadModifiers[1] = nullptr;
@@ -111,10 +111,7 @@ void Kernel::setArguments(const std::vector<ArgumentId>& argumentIds)
     this->argumentIds = argumentIds;
 }
 
-void Kernel::setTuningManipulatorFlag(const bool flag)
-{
-    this->tuningManipulatorFlag = flag;
-}
+
 
 KernelId Kernel::getId() const
 {
@@ -341,10 +338,6 @@ bool Kernel::hasParameter(const std::string& parameterName) const
     return false;
 }
 
-bool Kernel::hasTuningManipulator() const
-{
-    return tuningManipulatorFlag;
-}
 
 void Kernel::validateModifierParameters(const std::vector<std::string>& parameterNames) const
 {
