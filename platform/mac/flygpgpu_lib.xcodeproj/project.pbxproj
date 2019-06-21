@@ -26,12 +26,9 @@
 		96D0F060228D2C6E00C98544 /* kernel_runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFBF228D2C6E00C98544 /* kernel_runner.cpp */; };
 		96D0F065228D2C6E00C98544 /* modifier_dimension.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFC5228D2C6E00C98544 /* modifier_dimension.h */; };
 		96D0F066228D2C6E00C98544 /* argument_upload_type.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFC6228D2C6E00C98544 /* argument_upload_type.h */; };
-		96D0F067228D2C6E00C98544 /* print_format.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFC7228D2C6E00C98544 /* print_format.h */; };
 		96D0F068228D2C6E00C98544 /* compute_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFC8228D2C6E00C98544 /* compute_api.h */; };
-		96D0F069228D2C6E00C98544 /* search_method.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFC9228D2C6E00C98544 /* search_method.h */; };
 		96D0F06A228D2C6E00C98544 /* device_type.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFCA228D2C6E00C98544 /* device_type.h */; };
 		96D0F06B228D2C6E00C98544 /* dimension_vector_type.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFCB228D2C6E00C98544 /* dimension_vector_type.h */; };
-		96D0F06C228D2C6E00C98544 /* validation_method.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFCC228D2C6E00C98544 /* validation_method.h */; };
 		96D0F06D228D2C6E00C98544 /* modifier_action.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFCD228D2C6E00C98544 /* modifier_action.h */; };
 		96D0F06E228D2C6E00C98544 /* global_size_type.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFCE228D2C6E00C98544 /* global_size_type.h */; };
 		96D0F06F228D2C6E00C98544 /* argument_memory_location.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFCF228D2C6E00C98544 /* argument_memory_location.h */; };
@@ -52,21 +49,12 @@
 		96D0F080228D2C6E00C98544 /* computation_result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFE2228D2C6E00C98544 /* computation_result.cpp */; };
 		96D0F081228D2C6E00C98544 /* output_descriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFE3228D2C6E00C98544 /* output_descriptor.h */; };
 		96D0F082228D2C6E00C98544 /* parameter_pair.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFE4228D2C6E00C98544 /* parameter_pair.h */; };
-		96D0F083228D2C6E00C98544 /* stop_condition.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFE6228D2C6E00C98544 /* stop_condition.h */; };
-		96D0F084228D2C6E00C98544 /* configuration_duration.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFE7228D2C6E00C98544 /* configuration_duration.h */; };
-		96D0F085228D2C6E00C98544 /* configuration_fraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFE8228D2C6E00C98544 /* configuration_fraction.h */; };
-		96D0F086228D2C6E00C98544 /* tuning_duration.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFE9228D2C6E00C98544 /* tuning_duration.h */; };
-		96D0F087228D2C6E00C98544 /* configuration_count.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFEA228D2C6E00C98544 /* configuration_count.h */; };
-		96D0F088228D2C6E00C98544 /* kernel_profiling_counter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFEB228D2C6E00C98544 /* kernel_profiling_counter.cpp */; };
 		96D0F089228D2C6E00C98544 /* computation_result.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFEC228D2C6E00C98544 /* computation_result.h */; };
 		96D0F08A228D2C6E00C98544 /* platform_info.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFED228D2C6E00C98544 /* platform_info.h */; };
-		96D0F08C228D2C6E00C98544 /* kernel_profiling_counter.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFEF228D2C6E00C98544 /* kernel_profiling_counter.h */; };
 		96D0F08D228D2C6E00C98544 /* device_info.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFF0228D2C6E00C98544 /* device_info.cpp */; };
 		96D0F08E228D2C6E00C98544 /* dimension_vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFF1228D2C6E00C98544 /* dimension_vector.cpp */; };
 		96D0F090228D2C6E00C98544 /* dimension_vector.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFF3228D2C6E00C98544 /* dimension_vector.h */; };
 		96D0F091228D2C6E00C98544 /* output_descriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFF4228D2C6E00C98544 /* output_descriptor.cpp */; };
-		96D0F092228D2C6E00C98544 /* kernel_profiling_data.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFF5228D2C6E00C98544 /* kernel_profiling_data.h */; };
-		96D0F094228D2C6E00C98544 /* kernel_profiling_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFF7228D2C6E00C98544 /* kernel_profiling_data.cpp */; };
 		96D0F095228D2C6E00C98544 /* parameter_pair.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFF8228D2C6E00C98544 /* parameter_pair.cpp */; };
 		96D0F096228D2C6E00C98544 /* platform_info.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFF9228D2C6E00C98544 /* platform_info.cpp */; };
 		96D0F097228D2C6E00C98544 /* device_info.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0EFFA228D2C6E00C98544 /* device_info.h */; };
@@ -75,26 +63,20 @@
 		96D0F09A228D2C6E00C98544 /* kernel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFFE228D2C6E00C98544 /* kernel.cpp */; };
 		96D0F09B228D2C6E00C98544 /* kernel_parameter_pack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0EFFF228D2C6E00C98544 /* kernel_parameter_pack.cpp */; };
 		96D0F09C228D2C6E00C98544 /* kernel_parameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0F000228D2C6E00C98544 /* kernel_parameter.cpp */; };
-		96D0F09D228D2C6E00C98544 /* kernel_composition.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F001228D2C6E00C98544 /* kernel_composition.h */; };
 		96D0F09E228D2C6E00C98544 /* kernel_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F002228D2C6E00C98544 /* kernel_manager.h */; };
 		96D0F09F228D2C6E00C98544 /* kernel_parameter_pack.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F003228D2C6E00C98544 /* kernel_parameter_pack.h */; };
 		96D0F0A0228D2C6E00C98544 /* kernel.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F004228D2C6E00C98544 /* kernel.h */; };
 		96D0F0A1228D2C6E00C98544 /* kernel_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0F005228D2C6E00C98544 /* kernel_manager.cpp */; };
 		96D0F0A2228D2C6E00C98544 /* kernel_configuration.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F006228D2C6E00C98544 /* kernel_configuration.h */; };
-		96D0F0A3228D2C6E00C98544 /* kernel_composition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0F007228D2C6E00C98544 /* kernel_composition.cpp */; };
 		96D0F0A4228D2C6E00C98544 /* kernel_constraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F008228D2C6E00C98544 /* kernel_constraint.h */; };
 		96D0F0A5228D2C6E00C98544 /* kernel_parameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F009228D2C6E00C98544 /* kernel_parameter.h */; };
 		96D0F0A6228D2C6E00C98544 /* fly_platform.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F00A228D2C6E00C98544 /* fly_platform.h */; };
-		96D0F0A7228D2C6E00C98544 /* result_loader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0F00C228D2C6E00C98544 /* result_loader.cpp */; };
-		96D0F0A8228D2C6E00C98544 /* result_printer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0F00D228D2C6E00C98544 /* result_printer.cpp */; };
 		96D0F0A9228D2C6E00C98544 /* fly_utility.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F00E228D2C6E00C98544 /* fly_utility.h */; };
 		96D0F0AA228D2C6E00C98544 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0F00F228D2C6E00C98544 /* timer.cpp */; };
 		96D0F0AB228D2C6E00C98544 /* fly_utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0F010228D2C6E00C98544 /* fly_utility.cpp */; };
 		96D0F0AC228D2C6E00C98544 /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F011228D2C6E00C98544 /* timer.h */; };
-		96D0F0AD228D2C6E00C98544 /* result_printer.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F012228D2C6E00C98544 /* result_printer.h */; };
 		96D0F0AE228D2C6E00C98544 /* logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0F013228D2C6E00C98544 /* logger.cpp */; };
 		96D0F0AF228D2C6E00C98544 /* logger.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F014228D2C6E00C98544 /* logger.h */; };
-		96D0F0B0228D2C6E00C98544 /* result_loader.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F015228D2C6E00C98544 /* result_loader.h */; };
 		96D0F0B2228D2C6E00C98544 /* cuda_utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0F019228D2C6E00C98544 /* cuda_utility.cpp */; };
 		96D0F0B3228D2C6E00C98544 /* cuda_utility.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F01A228D2C6E00C98544 /* cuda_utility.h */; };
 		96D0F0B4228D2C6E00C98544 /* cuda_program.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F01B228D2C6E00C98544 /* cuda_program.h */; };
@@ -104,8 +86,6 @@
 		96D0F0B8228D2C6E00C98544 /* cuda_context.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F01F228D2C6E00C98544 /* cuda_context.h */; };
 		96D0F0B9228D2C6E00C98544 /* cuda_kernel.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F020228D2C6E00C98544 /* cuda_kernel.h */; };
 		96D0F0BA228D2C6E00C98544 /* cuda_engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D0F021228D2C6E00C98544 /* cuda_engine.cpp */; };
-		96D0F0BB228D2C6E00C98544 /* cuda_profiling_state.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F022228D2C6E00C98544 /* cuda_profiling_state.h */; };
-		96D0F0BC228D2C6E00C98544 /* cuda_profiling_metric.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F023228D2C6E00C98544 /* cuda_profiling_metric.h */; };
 		96D0F0BD228D2C6E00C98544 /* cuda_event.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F024228D2C6E00C98544 /* cuda_event.h */; };
 		96D0F0BE228D2C6E00C98544 /* cuda_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F025228D2C6E00C98544 /* cuda_buffer.h */; };
 		96D0F0BF228D2C6E00C98544 /* opencl_engine.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D0F027228D2C6E00C98544 /* opencl_engine.h */; };
@@ -165,12 +145,9 @@
 		96D0EFBF228D2C6E00C98544 /* kernel_runner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kernel_runner.cpp; sourceTree = "<group>"; };
 		96D0EFC5228D2C6E00C98544 /* modifier_dimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modifier_dimension.h; sourceTree = "<group>"; };
 		96D0EFC6228D2C6E00C98544 /* argument_upload_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = argument_upload_type.h; sourceTree = "<group>"; };
-		96D0EFC7228D2C6E00C98544 /* print_format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = print_format.h; sourceTree = "<group>"; };
 		96D0EFC8228D2C6E00C98544 /* compute_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compute_api.h; sourceTree = "<group>"; };
-		96D0EFC9228D2C6E00C98544 /* search_method.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = search_method.h; sourceTree = "<group>"; };
 		96D0EFCA228D2C6E00C98544 /* device_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = device_type.h; sourceTree = "<group>"; };
 		96D0EFCB228D2C6E00C98544 /* dimension_vector_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dimension_vector_type.h; sourceTree = "<group>"; };
-		96D0EFCC228D2C6E00C98544 /* validation_method.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = validation_method.h; sourceTree = "<group>"; };
 		96D0EFCD228D2C6E00C98544 /* modifier_action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modifier_action.h; sourceTree = "<group>"; };
 		96D0EFCE228D2C6E00C98544 /* global_size_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = global_size_type.h; sourceTree = "<group>"; };
 		96D0EFCF228D2C6E00C98544 /* argument_memory_location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = argument_memory_location.h; sourceTree = "<group>"; };
@@ -191,21 +168,12 @@
 		96D0EFE2228D2C6E00C98544 /* computation_result.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = computation_result.cpp; sourceTree = "<group>"; };
 		96D0EFE3228D2C6E00C98544 /* output_descriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = output_descriptor.h; sourceTree = "<group>"; };
 		96D0EFE4228D2C6E00C98544 /* parameter_pair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parameter_pair.h; sourceTree = "<group>"; };
-		96D0EFE6228D2C6E00C98544 /* stop_condition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stop_condition.h; sourceTree = "<group>"; };
-		96D0EFE7228D2C6E00C98544 /* configuration_duration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = configuration_duration.h; sourceTree = "<group>"; };
-		96D0EFE8228D2C6E00C98544 /* configuration_fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = configuration_fraction.h; sourceTree = "<group>"; };
-		96D0EFE9228D2C6E00C98544 /* tuning_duration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tuning_duration.h; sourceTree = "<group>"; };
-		96D0EFEA228D2C6E00C98544 /* configuration_count.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = configuration_count.h; sourceTree = "<group>"; };
-		96D0EFEB228D2C6E00C98544 /* kernel_profiling_counter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kernel_profiling_counter.cpp; sourceTree = "<group>"; };
 		96D0EFEC228D2C6E00C98544 /* computation_result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = computation_result.h; sourceTree = "<group>"; };
 		96D0EFED228D2C6E00C98544 /* platform_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platform_info.h; sourceTree = "<group>"; };
-		96D0EFEF228D2C6E00C98544 /* kernel_profiling_counter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_profiling_counter.h; sourceTree = "<group>"; };
 		96D0EFF0228D2C6E00C98544 /* device_info.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = device_info.cpp; sourceTree = "<group>"; };
 		96D0EFF1228D2C6E00C98544 /* dimension_vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dimension_vector.cpp; sourceTree = "<group>"; };
 		96D0EFF3228D2C6E00C98544 /* dimension_vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dimension_vector.h; sourceTree = "<group>"; };
 		96D0EFF4228D2C6E00C98544 /* output_descriptor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = output_descriptor.cpp; sourceTree = "<group>"; };
-		96D0EFF5228D2C6E00C98544 /* kernel_profiling_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_profiling_data.h; sourceTree = "<group>"; };
-		96D0EFF7228D2C6E00C98544 /* kernel_profiling_data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kernel_profiling_data.cpp; sourceTree = "<group>"; };
 		96D0EFF8228D2C6E00C98544 /* parameter_pair.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = parameter_pair.cpp; sourceTree = "<group>"; };
 		96D0EFF9228D2C6E00C98544 /* platform_info.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = platform_info.cpp; sourceTree = "<group>"; };
 		96D0EFFA228D2C6E00C98544 /* device_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = device_info.h; sourceTree = "<group>"; };
@@ -214,26 +182,20 @@
 		96D0EFFE228D2C6E00C98544 /* kernel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kernel.cpp; sourceTree = "<group>"; };
 		96D0EFFF228D2C6E00C98544 /* kernel_parameter_pack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kernel_parameter_pack.cpp; sourceTree = "<group>"; };
 		96D0F000228D2C6E00C98544 /* kernel_parameter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kernel_parameter.cpp; sourceTree = "<group>"; };
-		96D0F001228D2C6E00C98544 /* kernel_composition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_composition.h; sourceTree = "<group>"; };
 		96D0F002228D2C6E00C98544 /* kernel_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_manager.h; sourceTree = "<group>"; };
 		96D0F003228D2C6E00C98544 /* kernel_parameter_pack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_parameter_pack.h; sourceTree = "<group>"; };
 		96D0F004228D2C6E00C98544 /* kernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel.h; sourceTree = "<group>"; };
 		96D0F005228D2C6E00C98544 /* kernel_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kernel_manager.cpp; sourceTree = "<group>"; };
 		96D0F006228D2C6E00C98544 /* kernel_configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_configuration.h; sourceTree = "<group>"; };
-		96D0F007228D2C6E00C98544 /* kernel_composition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kernel_composition.cpp; sourceTree = "<group>"; };
 		96D0F008228D2C6E00C98544 /* kernel_constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_constraint.h; sourceTree = "<group>"; };
 		96D0F009228D2C6E00C98544 /* kernel_parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_parameter.h; sourceTree = "<group>"; };
 		96D0F00A228D2C6E00C98544 /* fly_platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fly_platform.h; sourceTree = "<group>"; };
-		96D0F00C228D2C6E00C98544 /* result_loader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = result_loader.cpp; sourceTree = "<group>"; };
-		96D0F00D228D2C6E00C98544 /* result_printer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = result_printer.cpp; sourceTree = "<group>"; };
 		96D0F00E228D2C6E00C98544 /* fly_utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fly_utility.h; sourceTree = "<group>"; };
 		96D0F00F228D2C6E00C98544 /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timer.cpp; sourceTree = "<group>"; };
 		96D0F010228D2C6E00C98544 /* fly_utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fly_utility.cpp; sourceTree = "<group>"; };
 		96D0F011228D2C6E00C98544 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timer.h; sourceTree = "<group>"; };
-		96D0F012228D2C6E00C98544 /* result_printer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = result_printer.h; sourceTree = "<group>"; };
 		96D0F013228D2C6E00C98544 /* logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = logger.cpp; sourceTree = "<group>"; };
 		96D0F014228D2C6E00C98544 /* logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logger.h; sourceTree = "<group>"; };
-		96D0F015228D2C6E00C98544 /* result_loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = result_loader.h; sourceTree = "<group>"; };
 		96D0F019228D2C6E00C98544 /* cuda_utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cuda_utility.cpp; sourceTree = "<group>"; };
 		96D0F01A228D2C6E00C98544 /* cuda_utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cuda_utility.h; sourceTree = "<group>"; };
 		96D0F01B228D2C6E00C98544 /* cuda_program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cuda_program.h; sourceTree = "<group>"; };
@@ -243,8 +205,6 @@
 		96D0F01F228D2C6E00C98544 /* cuda_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cuda_context.h; sourceTree = "<group>"; };
 		96D0F020228D2C6E00C98544 /* cuda_kernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cuda_kernel.h; sourceTree = "<group>"; };
 		96D0F021228D2C6E00C98544 /* cuda_engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cuda_engine.cpp; sourceTree = "<group>"; };
-		96D0F022228D2C6E00C98544 /* cuda_profiling_state.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cuda_profiling_state.h; sourceTree = "<group>"; };
-		96D0F023228D2C6E00C98544 /* cuda_profiling_metric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cuda_profiling_metric.h; sourceTree = "<group>"; };
 		96D0F024228D2C6E00C98544 /* cuda_event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cuda_event.h; sourceTree = "<group>"; };
 		96D0F025228D2C6E00C98544 /* cuda_buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cuda_buffer.h; sourceTree = "<group>"; };
 		96D0F027228D2C6E00C98544 /* opencl_engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opencl_engine.h; sourceTree = "<group>"; };
@@ -356,12 +316,9 @@
 			children = (
 				96D0EFC5228D2C6E00C98544 /* modifier_dimension.h */,
 				96D0EFC6228D2C6E00C98544 /* argument_upload_type.h */,
-				96D0EFC7228D2C6E00C98544 /* print_format.h */,
 				96D0EFC8228D2C6E00C98544 /* compute_api.h */,
-				96D0EFC9228D2C6E00C98544 /* search_method.h */,
 				96D0EFCA228D2C6E00C98544 /* device_type.h */,
 				96D0EFCB228D2C6E00C98544 /* dimension_vector_type.h */,
-				96D0EFCC228D2C6E00C98544 /* validation_method.h */,
 				96D0EFCD228D2C6E00C98544 /* modifier_action.h */,
 				96D0EFCE228D2C6E00C98544 /* global_size_type.h */,
 				96D0EFCF228D2C6E00C98544 /* argument_memory_location.h */,
@@ -392,13 +349,10 @@
 		96D0EFE1228D2C6E00C98544 /* api */ = {
 			isa = PBXGroup;
 			children = (
-				96D0EFE5228D2C6E00C98544 /* stop_condition */,
 				96D0EFEC228D2C6E00C98544 /* computation_result.h */,
 				96D0EFE2228D2C6E00C98544 /* computation_result.cpp */,
 				96D0EFE4228D2C6E00C98544 /* parameter_pair.h */,
 				96D0EFF8228D2C6E00C98544 /* parameter_pair.cpp */,
-				96D0EFEF228D2C6E00C98544 /* kernel_profiling_counter.h */,
-				96D0EFEB228D2C6E00C98544 /* kernel_profiling_counter.cpp */,
 				96D0EFED228D2C6E00C98544 /* platform_info.h */,
 				96D0EFFA228D2C6E00C98544 /* device_info.h */,
 				96D0EFF0228D2C6E00C98544 /* device_info.cpp */,
@@ -406,23 +360,9 @@
 				96D0EFF1228D2C6E00C98544 /* dimension_vector.cpp */,
 				96D0EFE3228D2C6E00C98544 /* output_descriptor.h */,
 				96D0EFF4228D2C6E00C98544 /* output_descriptor.cpp */,
-				96D0EFF5228D2C6E00C98544 /* kernel_profiling_data.h */,
-				96D0EFF7228D2C6E00C98544 /* kernel_profiling_data.cpp */,
 				96D0EFF9228D2C6E00C98544 /* platform_info.cpp */,
 			);
 			path = api;
-			sourceTree = "<group>";
-		};
-		96D0EFE5228D2C6E00C98544 /* stop_condition */ = {
-			isa = PBXGroup;
-			children = (
-				96D0EFE6228D2C6E00C98544 /* stop_condition.h */,
-				96D0EFE7228D2C6E00C98544 /* configuration_duration.h */,
-				96D0EFE8228D2C6E00C98544 /* configuration_fraction.h */,
-				96D0EFE9228D2C6E00C98544 /* tuning_duration.h */,
-				96D0EFEA228D2C6E00C98544 /* configuration_count.h */,
-			);
-			path = stop_condition;
 			sourceTree = "<group>";
 		};
 		96D0EFFB228D2C6E00C98544 /* kernel */ = {
@@ -438,8 +378,6 @@
 				96D0EFFF228D2C6E00C98544 /* kernel_parameter_pack.cpp */,
 				96D0F009228D2C6E00C98544 /* kernel_parameter.h */,
 				96D0F000228D2C6E00C98544 /* kernel_parameter.cpp */,
-				96D0F001228D2C6E00C98544 /* kernel_composition.h */,
-				96D0F007228D2C6E00C98544 /* kernel_composition.cpp */,
 				96D0F002228D2C6E00C98544 /* kernel_manager.h */,
 				96D0F005228D2C6E00C98544 /* kernel_manager.cpp */,
 			);
@@ -449,10 +387,6 @@
 		96D0F00B228D2C6E00C98544 /* utility */ = {
 			isa = PBXGroup;
 			children = (
-				96D0F015228D2C6E00C98544 /* result_loader.h */,
-				96D0F00C228D2C6E00C98544 /* result_loader.cpp */,
-				96D0F012228D2C6E00C98544 /* result_printer.h */,
-				96D0F00D228D2C6E00C98544 /* result_printer.cpp */,
 				96D0F00E228D2C6E00C98544 /* fly_utility.h */,
 				96D0F010228D2C6E00C98544 /* fly_utility.cpp */,
 				96D0F011228D2C6E00C98544 /* timer.h */,
@@ -486,8 +420,6 @@
 				96D0F01F228D2C6E00C98544 /* cuda_context.h */,
 				96D0F020228D2C6E00C98544 /* cuda_kernel.h */,
 				96D0F021228D2C6E00C98544 /* cuda_engine.cpp */,
-				96D0F022228D2C6E00C98544 /* cuda_profiling_state.h */,
-				96D0F023228D2C6E00C98544 /* cuda_profiling_metric.h */,
 				96D0F024228D2C6E00C98544 /* cuda_event.h */,
 				96D0F025228D2C6E00C98544 /* cuda_buffer.h */,
 			);
@@ -578,7 +510,6 @@
 			files = (
 				96D0F0C3228D2C6E00C98544 /* opencl_platform.h in Headers */,
 				96D0F0DD228D2C6E00C98544 /* vulkan_semaphore.h in Headers */,
-				96D0F0BC228D2C6E00C98544 /* cuda_profiling_metric.h in Headers */,
 				96D0F0B9228D2C6E00C98544 /* cuda_kernel.h in Headers */,
 				96D0F078228D2C6E00C98544 /* profiling_counter_type.h in Headers */,
 				96D0F073228D2C6E00C98544 /* kernel_run_mode.h in Headers */,
@@ -595,15 +526,11 @@
 				96D0F0C8228D2C6E00C98544 /* opencl_kernel.h in Headers */,
 				96D0F06A228D2C6E00C98544 /* device_type.h in Headers */,
 				96D0F0C4228D2C6E00C98544 /* opencl_command_queue.h in Headers */,
-				96D0F092228D2C6E00C98544 /* kernel_profiling_data.h in Headers */,
-				96D0F086228D2C6E00C98544 /* tuning_duration.h in Headers */,
 				96D0F06E228D2C6E00C98544 /* global_size_type.h in Headers */,
 				96D0F0B3228D2C6E00C98544 /* cuda_utility.h in Headers */,
 				96D0F0B6228D2C6E00C98544 /* cuda_device.h in Headers */,
 				96D0F04F228D2C6E00C98544 /* kernel_result.h in Headers */,
-				96D0F08C228D2C6E00C98544 /* kernel_profiling_counter.h in Headers */,
 				96D0F0CC228D2C6E00C98544 /* vulkan_fence.h in Headers */,
-				96D0F0AD228D2C6E00C98544 /* result_printer.h in Headers */,
 				96D0F0B5228D2C6E00C98544 /* cuda_stream.h in Headers */,
 				96D0F0C9228D2C6E00C98544 /* opencl_utility.h in Headers */,
 				96D0F06D228D2C6E00C98544 /* modifier_action.h in Headers */,
@@ -613,17 +540,12 @@
 				96D0F09E228D2C6E00C98544 /* kernel_manager.h in Headers */,
 				96D0F0D2228D2C6E00C98544 /* vulkan_query_pool.h in Headers */,
 				96D0F072228D2C6E00C98544 /* argument_access_type.h in Headers */,
-				96D0F083228D2C6E00C98544 /* stop_condition.h in Headers */,
 				96D0F0D9228D2C6E00C98544 /* vulkan_buffer.h in Headers */,
-				96D0F09D228D2C6E00C98544 /* kernel_composition.h in Headers */,
 				96D0F06B228D2C6E00C98544 /* dimension_vector_type.h in Headers */,
-				96D0F069228D2C6E00C98544 /* search_method.h in Headers */,
 				96D0F079228D2C6E00C98544 /* argument_manager.h in Headers */,
 				96D0F0A9228D2C6E00C98544 /* fly_utility.h in Headers */,
-				96D0F085228D2C6E00C98544 /* configuration_fraction.h in Headers */,
 				96D0F0B7228D2C6E00C98544 /* cuda_engine.h in Headers */,
 				960E4CEA22B775E6007CC8F7 /* tuner_core.h in Headers */,
-				96D0F084228D2C6E00C98544 /* configuration_duration.h in Headers */,
 				96D0F07F228D2C6E00C98544 /* half.h in Headers */,
 				96574FF6228D726E008CC2A7 /* shaderrc_fly.hpp in Headers */,
 				96D0F0E1228D2C6E00C98544 /* compute_engine.h in Headers */,
@@ -638,20 +560,17 @@
 				96D0F090228D2C6E00C98544 /* dimension_vector.h in Headers */,
 				96D0F074228D2C6E00C98544 /* logging_level.h in Headers */,
 				96D0F0D7228D2C6E00C98544 /* vulkan_descriptor_set_holder.h in Headers */,
-				96D0F06C228D2C6E00C98544 /* validation_method.h in Headers */,
 				96D0F0A4228D2C6E00C98544 /* kernel_constraint.h in Headers */,
 				96D0F0CB228D2C6E00C98544 /* vulkan_descriptor_set_layout.h in Headers */,
 				96D0F0A5228D2C6E00C98544 /* kernel_parameter.h in Headers */,
 				96D0F0CA228D2C6E00C98544 /* opencl_program.h in Headers */,
 				96D0F0B8228D2C6E00C98544 /* cuda_context.h in Headers */,
-				96D0F0B0228D2C6E00C98544 /* result_loader.h in Headers */,
 				96D0F0C1228D2C6E00C98544 /* opencl_device.h in Headers */,
 				96D0F07B228D2C6E00C98544 /* kernel_argument.h in Headers */,
 				96D0F0D3228D2C6E00C98544 /* vulkan_pipeline_cache_entry.h in Headers */,
 				96D0F0AF228D2C6E00C98544 /* logger.h in Headers */,
 				96D0F065228D2C6E00C98544 /* modifier_dimension.h in Headers */,
 				96D0F089228D2C6E00C98544 /* computation_result.h in Headers */,
-				96D0F067228D2C6E00C98544 /* print_format.h in Headers */,
 				96D0F0CE228D2C6E00C98544 /* vulkan_engine.h in Headers */,
 				96D0F0D5228D2C6E00C98544 /* vulkan_instance.h in Headers */,
 				96D0F0AC228D2C6E00C98544 /* timer.h in Headers */,
@@ -664,14 +583,12 @@
 				96D0F0DE228D2C6E00C98544 /* vulkan_queue.h in Headers */,
 				96D0F071228D2C6E00C98544 /* validation_mode.h in Headers */,
 				96D0F075228D2C6E00C98544 /* enum_bitfield.h in Headers */,
-				96D0F087228D2C6E00C98544 /* configuration_count.h in Headers */,
 				96D0F0BE228D2C6E00C98544 /* cuda_buffer.h in Headers */,
 				96D0F0C7228D2C6E00C98544 /* opencl_buffer.h in Headers */,
 				96D0F0A6228D2C6E00C98544 /* fly_platform.h in Headers */,
 				96D0F077228D2C6E00C98544 /* modifier_type.h in Headers */,
 				96D0F066228D2C6E00C98544 /* argument_upload_type.h in Headers */,
 				96D0F06F228D2C6E00C98544 /* argument_memory_location.h in Headers */,
-				96D0F0BB228D2C6E00C98544 /* cuda_profiling_state.h in Headers */,
 				96D0F0BF228D2C6E00C98544 /* opencl_engine.h in Headers */,
 				96D0F0D8228D2C6E00C98544 /* vulkan_physical_device.h in Headers */,
 				96B2D9EA22B37C8D00D1C8E9 /* opencl_common.h in Headers */,
@@ -741,16 +658,13 @@
 				96D0F09A228D2C6E00C98544 /* kernel.cpp in Sources */,
 				96D0F0AB228D2C6E00C98544 /* fly_utility.cpp in Sources */,
 				96D0F091228D2C6E00C98544 /* output_descriptor.cpp in Sources */,
-				96D0F0A7228D2C6E00C98544 /* result_loader.cpp in Sources */,
 				96D0F098228D2C6E00C98544 /* kernel_constraint.cpp in Sources */,
 				96D0F0C2228D2C6E00C98544 /* opencl_utility.cpp in Sources */,
-				96D0F0A3228D2C6E00C98544 /* kernel_composition.cpp in Sources */,
 				96D0F07C228D2C6E00C98544 /* kernel_argument.cpp in Sources */,
 				96574FF5228D726E008CC2A7 /* shaderrc_fly.cpp in Sources */,
 				96D0F060228D2C6E00C98544 /* kernel_runner.cpp in Sources */,
 				96D0F080228D2C6E00C98544 /* computation_result.cpp in Sources */,
 				96D0F0BA228D2C6E00C98544 /* cuda_engine.cpp in Sources */,
-				96D0F094228D2C6E00C98544 /* kernel_profiling_data.cpp in Sources */,
 				96D0F0B2228D2C6E00C98544 /* cuda_utility.cpp in Sources */,
 				96D0F0D6228D2C6E00C98544 /* vulkan_engine.cpp in Sources */,
 				96D0F0D1228D2C6E00C98544 /* vulkan_utility.cpp in Sources */,
@@ -762,9 +676,7 @@
 				96D0F0AE228D2C6E00C98544 /* logger.cpp in Sources */,
 				96D0F07A228D2C6E00C98544 /* argument_manager.cpp in Sources */,
 				96D0F0AA228D2C6E00C98544 /* timer.cpp in Sources */,
-				96D0F088228D2C6E00C98544 /* kernel_profiling_counter.cpp in Sources */,
 				96D0F0C6228D2C6E00C98544 /* opencl_engine.cpp in Sources */,
-				96D0F0A8228D2C6E00C98544 /* result_printer.cpp in Sources */,
 				96D0F09B228D2C6E00C98544 /* kernel_parameter_pack.cpp in Sources */,
 				96D0F0A1228D2C6E00C98544 /* kernel_manager.cpp in Sources */,
 				960E4CEC22B775E6007CC8F7 /* tuner_core.cpp in Sources */,

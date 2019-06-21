@@ -73,14 +73,6 @@ public:
     std::vector<DeviceInfo> getDeviceInfo(const PlatformIndex platform) const override;
     DeviceInfo getCurrentDeviceInfo() const override;
 
-    // Kernel profiling methods
-    void initializeKernelProfiling(const KernelRuntimeData& kernelData) override;
-    EventId runKernelWithProfiling(const KernelRuntimeData& kernelData, const std::vector<KernelArgument*>& argumentPointers,
-        const QueueId queue) override;
-    uint64_t getRemainingKernelProfilingRuns(const std::string& kernelName, const std::string& kernelSource) override;
-    KernelResult getKernelResultWithProfiling(const EventId id, const std::vector<OutputDescriptor>& outputDescriptors) override;
-    void setKernelProfilingCounters(const std::vector<std::string>& counterNames) override;
-
     std::unique_ptr<OpenCLProgram> createAndBuildProgram(const std::string& source) const;
 
 private:
