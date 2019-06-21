@@ -133,12 +133,6 @@
     <ClCompile Include="..\..\fly\tuning_runner\kernel_runner.cpp">
       <Filter>fly\tuning_runner</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\fly\utility\result_loader.cpp">
-      <Filter>fly\utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\fly\utility\result_printer.cpp">
-      <Filter>fly\utility</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\fly\utility\timer.cpp">
       <Filter>fly\utility</Filter>
     </ClCompile>
@@ -369,22 +363,10 @@
     <ClInclude Include="..\..\fly\enum\modifier_type.h">
       <Filter>fly\enum</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\fly\enum\print_format.h">
-      <Filter>fly\enum</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\fly\enum\profiling_counter_type.h">
       <Filter>fly\enum</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\fly\enum\search_method.h">
-      <Filter>fly\enum</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\fly\enum\time_unit.h">
-      <Filter>fly\enum</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\enum\validation_method.h">
-      <Filter>fly\enum</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\enum\validation_mode.h">
       <Filter>fly\enum</Filter>
     </ClInclude>
     <ClInclude Include="..\..\fly\enum\argument_access_type.h">
@@ -427,12 +409,6 @@
       <Filter>fly\tuning_runner</Filter>
     </ClInclude>
     <ClInclude Include="..\..\fly\utility\logger.h">
-      <Filter>fly\utility</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\utility\result_loader.h">
-      <Filter>fly\utility</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\fly\utility\result_printer.h">
       <Filter>fly\utility</Filter>
     </ClInclude>
     <ClInclude Include="..\..\fly\utility\timer.h">

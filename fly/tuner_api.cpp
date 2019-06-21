@@ -11,9 +11,6 @@
 namespace fly
 {
 
-Tuner::Tuner(const PlatformIndex platform, const DeviceIndex device) :
-    tunerCore(MakeStdUnique<TunerCore>(platform, device, ComputeAPI::OpenCL, 1))
-{}
 
 Tuner::Tuner(const PlatformIndex platform, const DeviceIndex device, const ComputeAPI computeAPI) :
     tunerCore(MakeStdUnique<TunerCore>(platform, device, computeAPI, 1))
@@ -299,41 +296,6 @@ void Tuner::setKernelProfilingCounters(const std::vector<std::string>& counterNa
     {
         TunerCore::log(LoggingLevel::Error, error.what());
         throw;
-    }
-}
-
-
-void Tuner::setPrintingTimeUnit(const TimeUnit unit)
-{
-    tunerCore->setPrintingTimeUnit(unit);
-}
-
-void Tuner::setInvalidResultPrinting(const bool flag)
-{
-    tunerCore->setInvalidResultPrinting(flag);
-}
-
-void Tuner::printResult(const KernelId id, std::ostream& outputTarget, const PrintFormat format) const
-{
-    try
-    {
-        tunerCore->printResult(id, outputTarget, format);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
-    }
-}
-
-void Tuner::printResult(const KernelId id, const std::string& filePath, const PrintFormat format) const
-{
-    try
-    {
-        tunerCore->printResult(id, filePath, format);
-    }
-    catch (const std::runtime_error& error)
-    {
-        TunerCore::log(LoggingLevel::Error, error.what());
     }
 }
 

@@ -10,8 +10,6 @@
 #include "fly/kernel_argument/argument_manager.h"
 #include "fly/tuning_runner/kernel_runner.h"
 #include "fly/utility/logger.h"
-#include "fly/utility/result_loader.h"
-#include "fly/utility/result_printer.h"
 #include "fly/fly_types.h"
 
 namespace fly
@@ -59,12 +57,7 @@ public:
     ComputationResult runKernel(const KernelId id, const std::vector<ParameterPair>& configuration, const std::vector<OutputDescriptor>& output);
 
 
-    // Result printer methods
-    void setPrintingTimeUnit(const TimeUnit unit);
-    void setInvalidResultPrinting(const bool flag);
-    void printResult(const KernelId id, std::ostream& outputTarget, const PrintFormat format) const;
-    void printResult(const KernelId id, const std::string& filePath, const PrintFormat format) const;
-
+    
     // Compute engine methods
     void setCompilerOptions(const std::string& options);
     void setGlobalSizeType(const GlobalSizeType type);
@@ -88,7 +81,6 @@ private:
     // Attributes
     ArgumentManager argumentManager;
     KernelManager kernelManager;
-    ResultPrinter resultPrinter;
     std::unique_ptr<ComputeEngine> computeEngine;
     std::unique_ptr<KernelRunner> kernelRunner;
 };

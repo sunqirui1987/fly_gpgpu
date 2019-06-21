@@ -25,11 +25,8 @@
 #include "fly/enum/modifier_action.h"
 #include "fly/enum/modifier_dimension.h"
 #include "fly/enum/modifier_type.h"
-#include "fly/enum/print_format.h"
 #include "fly/enum/time_unit.h"
-#include "fly/enum/search_method.h"
-#include "fly/enum/validation_method.h"
-#include "fly/enum/validation_mode.h"
+
 
 // Data holders
 #include "fly/api/computation_result.h"
@@ -64,214 +61,89 @@ class TunerCore;
 class  Tuner
 {
 public:
-    /** @fn explicit Tuner(const PlatformIndex platform, const DeviceIndex device)
-      * Constructor, which creates new tuner object for specified platform and device. Tuner uses OpenCL as compute API, all commands are
-      * submitted to a single compute queue. Indices for available platforms and devices can be retrieved by calling printComputeAPIInfo() method.
-      * @param platform Index for platform used by created tuner.
-      * @param device Index for device used by created tuner.
-      */
-    explicit Tuner(const PlatformIndex platform, const DeviceIndex device);
+   
+   
+    Tuner(const PlatformIndex platform, const DeviceIndex device, const ComputeAPI computeAPI);
 
-    /** @fn explicit Tuner(const PlatformIndex platform, const DeviceIndex device, const ComputeAPI computeAPI)
-      * Constructor, which creates new tuner object for specified platform, device and compute API. All commands are submitted to a single
-      * compute queue. Indices for available platforms and devices can be retrieved by calling printComputeAPIInfo() method. If specified compute API
-      * is CUDA, platform index is ignored.
-      * @param platform Index for platform used by created tuner.
-      * @param device Index for device used by created tuner.
-      * @param computeAPI Compute API used by created tuner.
-      */
-    explicit Tuner(const PlatformIndex platform, const DeviceIndex device, const ComputeAPI computeAPI);
-
-    /** @fn explicit Tuner(const PlatformIndex platform, const DeviceIndex device, const ComputeAPI computeAPI, const uint32_t computeQueueCount)
-      * Constructor, which creates new tuner object for specified platform, device and compute API. Several compute queues are created, based
-      * on specified count. Commands to different queues can be submitted by utilizing TuningManipulator. Indices for available platforms and devices
-      * can be retrieved by calling printComputeAPIInfo() method. If specified compute API is CUDA, platform index is ignored.
-      * @param platform Index for platform used by created tuner.
-      * @param device Index for device used by created tuner.
-      * @param computeAPI Compute API used by created tuner.
-      * @param computeQueueCount Number of compute queues created inside the tuner. Has to be greater than zero.
-      */
-    explicit Tuner(const PlatformIndex platform, const DeviceIndex device, const ComputeAPI computeAPI, const uint32_t computeQueueCount);
+  
+    Tuner(const PlatformIndex platform, const DeviceIndex device, const ComputeAPI computeAPI, const uint32_t computeQueueCount);
 
     /** @fn ~Tuner()
       * Tuner destructor.
       */
     ~Tuner();
 
-    /** @fn KernelId addKernel(const std::string& source, const std::string& kernelName, const DimensionVector& globalSize,
-      * const DimensionVector& localSize)
-      * Adds new kernel to tuner from source code inside string. Requires specification of kernel name and default global and local thread sizes.
-      * @param source Kernel source code written in corresponding compute API language.
-      * @param kernelName Name of kernel function inside kernel source code.
-      * @param globalSize Dimensions for base kernel global size (eg. grid size in CUDA).
-      * @param localSize Dimensions for base kernel local size (eg. block size in CUDA).
-      * @return Id assigned to kernel by tuner. The id can be used in other API methods.
+    /**
+      * 从字符串内的源代码向tuner添加新的内核。要求指定内核名称和默认的全局和本地线程大小。
+      * @param source Kernel 源代码。
+      * @param kernelName 内核源代码中内核函数的名称
+      * @param globalSize 基本内核全局大小的维度 (eg. grid size in CUDA).
+      * @param localSize 基本内核本地大小的维度 (eg. block size in CUDA).
+      * @return Id  KernelId
       */
     KernelId addKernel(const std::string& source, const std::string& kernelName, const DimensionVector& globalSize,
         const DimensionVector& localSize);
 
-    /** @fn KernelId addKernelFromFile(const std::string& filePath, const std::string& kernelName, const DimensionVector& globalSize,
-      * const DimensionVector& localSize)
-      * Adds new kernel to tuner from source code inside file. Requires specification of kernel name and default global and local thread sizes.
-      * @param filePath Path to file with kernel source code written in corresponding compute API language.
-      * @param kernelName Name of kernel function inside kernel source code.
-      * @param globalSize Dimensions for base kernel global size (eg. grid size in CUDA).
-      * @param localSize Dimensions for base kernel local size (eg. block size in CUDA).
-      * @return Id assigned to kernel by tuner. The id can be used in other API methods.
-      */
+  
     KernelId addKernelFromFile(const std::string& filePath, const std::string& kernelName, const DimensionVector& globalSize,
         const DimensionVector& localSize);
 
-    /** @fn void setKernelArguments(const KernelId id, const std::vector<ArgumentId>& argumentIds)
-      * Sets kernel arguments for specified kernel by providing corresponding argument ids.
-      * @param id Id of kernel for which the arguments will be set.
-      * @param argumentIds Ids of arguments to be used by specified kernel. Order of ids must match the order of kernel arguments specified in kernel
-      * function. Argument ids for single kernel must be unique.
+    /** 
+      * 通过提供相应的参数id为指定的内核设置内核参数。
+      * @param id KernelId
+      * @param argumentIds 指定内核使用的参数的id。id的顺序必须与指定的内核参数的顺序匹配
       */
     void setKernelArguments(const KernelId id, const std::vector<ArgumentId>& argumentIds);
 
-    /** @fn void addParameter(const KernelId id, const std::string& parameterName, const std::vector<size_t>& parameterValues)
-      * Adds new integer parameter for specified kernel, providing parameter name and list of allowed values. When the corresponding kernel
-      * is launched, parameters will be added to kernel source code as preprocessor definitions. During the tuning process, tuner will generate
-      * configurations for combinations of kernel parameters and their values.
-      * @param id Id of kernel for which the parameter will be added.
-      * @param parameterName Name of a parameter. Parameter names for single kernel must be unique.
-      * @param parameterValues Vector of allowed values for the parameter.
+    /** 为指定的内核添加常量。
+    * @param id Id of kernel for which the constraint will be added.
+    * @param parameterNames 参数的名称
+    * @param constraintFunction 函数，如果提供的参数值组合有效，则返回true。返回false,否则.
+    */
+    void addConstraint(const KernelId id, const std::vector<std::string>& parameterNames,
+        const std::function<bool(const std::vector<size_t>&)>& constraintFunction);
+
+
+    /** 为指定的内核添加新的整数参数，提供参数名称和允许值的列表。
+       当启动相应的内核时，参数将作为预处理器定义添加到内核源代码中。
+      * @param id KernelId
+      * @param parameterName  参数的名称
+      * @param parameterValues int数组
       */
     void addParameter(const KernelId id, const std::string& parameterName, const std::vector<size_t>& parameterValues);
 
-    /** @fn void addParameterDouble(const KernelId id, const std::string& parameterName, const std::vector<double>& parameterValues)
-      * Adds new floating-point parameter for specified kernel, providing parameter name and list of allowed values. When the corresponding
-      * kernel is launched, parameters will be added to kernel source code as preprocessor definitions. During the tuning process, tuner will
-      * generate configurations for combinations of kernel parameters and their values.
-      * @param id Id of kernel for which the parameter will be added.
-      * @param parameterName Name of a parameter. Parameter names for single kernel must be unique.
-      * @param parameterValues Vector of allowed values for the parameter.
-      */
+    
     void addParameterDouble(const KernelId id, const std::string& parameterName, const std::vector<double>& parameterValues);
 
-    /** @fn void addParameterPack(const KernelId id, const std::string& packName, const std::vector<std::string> parameterNames)
-      * Adds a pack containing specified kernel parameters. When parameter packs are used, tuning configurations are generated progressively for each
-      * pack. Once best configuration is found for a specific pack, next pack is then processed. This method is useful when kernels contain groups of
-      * parameters that can be tuned independently. The total number of generated configurations that need to be tested is reduced.
-      * @param id Id of kernel for which the parameter pack will be added.
-      * @param packName Name of a parameter pack. Parameter pack names for a single kernel must be unique.
-      * @param parameterNames Names of parameters which will be added to the parameter pack.
-      */
+   
     void addParameterPack(const KernelId id, const std::string& packName, const std::vector<std::string>& parameterNames);
 
-    /** @fn void setThreadModifier(const KernelId id, const ModifierType modifierType, const ModifierDimension modifierDimension,
-      * const std::vector<std::string>& parameterNames, const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction)
-      * Sets a thread modifier function for specified kernel. This function receives thread size in specified kernel dimension and values of
-      * specified kernel parameters as input and returns modified thread size based on these values. The modifiers are useful in case when
-      * kernel parameters affect the number of required kernel threads.
-      * @param id Id of kernel for which the modifier will be set.
-      * @param modifierType Type of the thread modifier. See ::ModifierType for more information.
-      * @param modifierDimension Dimension which will be affected by the modifier. See ::ModifierDimension for more information.
-      * @param parameterNames Names of kernel parameters whose values will be passed into the modifier function. The order of parameter names
-      * corresponds to the order of parameter values inside the modifier function vector argument.
-      * @param modifierFunction Function which receives thread size in specified kernel dimension and values of specified kernel parameters as input
-      * and returns modified thread size based on these values.
+    /** 为指定的内核设置线程修饰符函数。
       */
     void setThreadModifier(const KernelId id, const ModifierType modifierType, const ModifierDimension modifierDimension,
         const std::vector<std::string>& parameterNames, const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction);
 
-    /** @fn void setThreadModifier(const KernelId id, const ModifierType modifierType, const ModifierDimension modifierDimension,
-      * const std::string& parameterName, const ModifierAction modifierAction)
-      * Sets a thread modifier for specified kernel. This is a simplified version of the thread modifier method which only supports one parameter
-      * and limited number of actions, but is easier to use.
-      * @param id Id of kernel for which the modifier will be set.
-      * @param modifierType Type of the thread modifier. See ::ModifierType for more information.
-      * @param modifierDimension Dimension which will be affected by the thread modifier. See ::ModifierDimension for more information.
-      * @param parameterName Name of a kernel parameter whose value will be utilized by the thread modifier.
-      * @param modifierAction Action of the thread modifier. See ::ModifierAction for more information.
-      */
+ 
     void setThreadModifier(const KernelId id, const ModifierType modifierType, const ModifierDimension modifierDimension,
         const std::string& parameterName, const ModifierAction modifierAction);
 
-    /** @fn void setLocalMemoryModifier(const KernelId id, const ArgumentId argumentId, const std::vector<std::string>& parameterNames,
-      * const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction)
-      * Sets a local memory modifier function for specified kernel. This function receives size of specified local memory argument and values of
-      * specified kernel parameters as input and returns modified argument size based on these values. The modifiers are useful in case when kernel
-      * parameters affect the size of local memory arguments.
-      * @param id Id of kernel for which the modifier will be set.
-      * @param argumentId Id of local memory kernel argument which will be affected by the modifier.
-      * @param parameterNames Names of kernel parameters whose values will be passed into the modifier function. The order of parameter names
-      * corresponds to the order of parameter values inside the modifier function vector argument.
-      * @param modifierFunction Function which receives size of specified local memory argument and values of specified kernel parameters as input
-      * and returns modified argument size based on these values.
-      */
     void setLocalMemoryModifier(const KernelId id, const ArgumentId argumentId, const std::vector<std::string>& parameterNames,
         const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction);
 
-    /** @fn void addConstraint(const KernelId id, const std::vector<std::string>& parameterNames,
-      * const std::function<bool(const std::vector<size_t>&)>& constraintFunction)
-      * Adds new constraint for specified kernel. Constraints are used to prevent generating of invalid configurations (eg. conflicting parameter
-      * values).
-      * @param id Id of kernel for which the constraint will be added.
-      * @param parameterNames Names of kernel parameters which will be affected by the constraint function. The order of parameter names corresponds
-      * to the order of parameter values inside the constraint function vector argument.
-      * @param constraintFunction Function which returns true if provided combination of parameter values is valid. Returns false otherwise.
-      */
-    void addConstraint(const KernelId id, const std::vector<std::string>& parameterNames,
-        const std::function<bool(const std::vector<size_t>&)>& constraintFunction);
-
+   
     
-    /** @fn void setCompositionKernelThreadModifier(const KernelId compositionId, const KernelId kernelId, const ModifierType modifierType,
-      * const ModifierDimension modifierDimension, const std::vector<std::string>& parameterNames,
-      * const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction)
-      * Calls setThreadModifier() method for a single kernel inside specified kernel composition. Does not affect standalone kernels or other
-      * compositions.
-      * @param compositionId Id of composition which includes the specified kernel.
-      * @param kernelId Id of kernel inside the composition for which the modifier will be set.
-      * @param modifierType Type of the thread modifier. See ::ModifierType for more information.
-      * @param modifierDimension Dimension which will be affected by the thread modifier. See ::ModifierDimension for more information.
-      * @param parameterNames Names of kernel parameters whose values will be passed into the modifier function. The order of parameter names
-      * corresponds to the order of parameter values inside the modifier function vector argument.
-      * @param modifierFunction Function which receives thread size in specified kernel dimension and values of specified kernel parameters as input
-      * and returns modified thread size based on these values.
-      */
+    
     void setCompositionKernelThreadModifier(const KernelId compositionId, const KernelId kernelId, const ModifierType modifierType,
         const ModifierDimension modifierDimension, const std::vector<std::string>& parameterNames,
         const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction);
 
-    /** @fn void setCompositionKernelThreadModifier(const KernelId compositionId, const KernelId kernelId, const ModifierType modifierType,
-      * const ModifierDimension modifierDimension, const std::string& parameterName, const ModifierAction modifierAction)
-      * Calls simplified version of setThreadModifier() method for a single kernel inside specified kernel composition. Does not affect standalone
-      * kernels or other compositions.
-      * @param compositionId Id of composition which includes the specified kernel.
-      * @param kernelId Id of kernel inside the composition for which the modifier will be set.
-      * @param modifierType Type of the thread modifier. See ::ModifierType for more information.
-      * @param modifierDimension Dimension which will be affected by the thread modifier. See ::ModifierDimension for more information.
-      * @param parameterName Name of a kernel parameter whose value will be utilized by the thread modifier.
-      * @param modifierAction Action of the thread modifier. See ::ModifierAction for more information.
-      */
     void setCompositionKernelThreadModifier(const KernelId compositionId, const KernelId kernelId, const ModifierType modifierType,
         const ModifierDimension modifierDimension, const std::string& parameterName, const ModifierAction modifierAction);
 
-    /** @fn void setCompositionKernelLocalMemoryModifier(const KernelId compositionId, const KernelId kernelId, const ArgumentId argumentId,
-      * const std::vector<std::string>& parameterNames, const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction)
-      * Calls setLocalMemoryModifier() method for a single kernel inside specified kernel composition. Does not affect standalone kernels or other
-      * compositions.
-      * @param compositionId Id of composition which includes the specified kernel.
-      * @param kernelId Id of kernel inside the composition for which the modifier will be set.
-      * @param argumentId Id of local memory kernel argument which will be affected by the modifier.
-      * @param parameterNames Names of kernel parameters whose values will be passed into the modifier function. The order of parameter names
-      * corresponds to the order of parameter values inside the modifier function vector argument.
-      * @param modifierFunction Function which receives size of specified local memory argument and values of specified kernel parameters as input
-      * and returns modified argument size based on these values.
-      */
+  
     void setCompositionKernelLocalMemoryModifier(const KernelId compositionId, const KernelId kernelId, const ArgumentId argumentId,
         const std::vector<std::string>& parameterNames, const std::function<size_t(const size_t, const std::vector<size_t>&)>& modifierFunction);
 
-    /** @fn void setCompositionKernelArguments(const KernelId compositionId, const KernelId kernelId, const std::vector<ArgumentId>& argumentIds)
-      * Calls setKernelArguments() method for a single kernel inside specified kernel composition. Does not affect standalone kernels or other
-      * compositions.
-      * @param compositionId Id of composition which includes the specified kernel.
-      * @param kernelId Id of kernel inside the composition for which the arguments will be set.
-      * @param argumentIds Ids of arguments to be used by specified kernel inside the composition. Order of ids must match the order of kernel
-      * arguments specified in kernel function. Argument ids for single kernel must be unique.
-      */
     void setCompositionKernelArguments(const KernelId compositionId, const KernelId kernelId, const std::vector<ArgumentId>& argumentIds);
 
     /** @fn template <typename T> ArgumentId addArgumentVector(const std::vector<T>& data, const ArgumentAccessType accessType)
@@ -384,37 +256,6 @@ public:
 
   
 
-    /** @fn void setPrintingTimeUnit(const TimeUnit unit)
-      * Sets time unit used for printing of results. Default time unit is milliseconds. 
-      * @param unit Time unit which will be used for printing of results. See ::TimeUnit for more information.
-      */
-    void setPrintingTimeUnit(const TimeUnit unit);
-
-    /** @fn void setInvalidResultPrinting(const bool flag)
-      * Toggles printing of results from failed kernel runs. Invalid results will be separated from valid results during printing.
-      * Printing of invalid results is disabled by default.
-      * @param flag If true, printing of invalid results will be enabled. It will be disabled otherwise.
-      */
-    void setInvalidResultPrinting(const bool flag);
-
-    /** @fn void printResult(const KernelId id, std::ostream& outputTarget, const PrintFormat format) const
-      * Prints tuning results for specified kernel to specified output stream. Valid results will be printed only if method tuneKernel() or
-      * tuneKernelByStep() was already called for corresponding kernel.
-      * @param id Id of kernel for which the results will be printed.
-      * @param outputTarget Location where the results will be printed.
-      * @param format Format in which the results will be printed. See ::PrintFormat for more information.
-      */
-    void printResult(const KernelId id, std::ostream& outputTarget, const PrintFormat format) const;
-
-    /** @fn void printResult(const KernelId id, const std::string& filePath, const PrintFormat format) const
-      * Prints tuning results for specified kernel to specified file. Valid results will be printed only if method tuneKernel() or
-      * tuneKernelByStep() was already called for corresponding kernel.
-      * @param id Id of kernel for which the results will be printed.
-      * @param filePath Path to file where the results will be printed.
-      * @param format Format in which the results are printed. See ::PrintFormat for more information.
-      */
-    void printResult(const KernelId id, const std::string& filePath, const PrintFormat format) const;
-
    
 
     /** @fn std::string getKernelSource(const KernelId id, const std::vector<ParameterPair>& configuration) const
@@ -427,82 +268,34 @@ public:
 
    
     
-    /** @fn void setCompilerOptions(const std::string& options)
-      * Sets compute API compiler options to specified options. There are no default options for OpenCL back-end. Default option for CUDA
-      * back-end is "--gpu-architecture=compute_30".
-      * 
-      * For list of OpenCL compiler options, see: https://www.khronos.org/registry/OpenCL/sdk/1.2/docs/man/xhtml/clBuildProgram.html
-      * For list of CUDA compiler options, see: http://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#nvcc-command-options
-      * @param options Compute API compiler options. If multiple options are used, they need to be separated by a single space character.
-      */
+   
     void setCompilerOptions(const std::string& options);
 
-    /** @fn void setKernelCacheCapacity(const size_t capacity)
-      * Sets capacity of kernel cache inside the tuner. The cache contains recently compiled kernels which are prepared to be launched immidiately,
-      * eliminating compilation overhead. Using the cache can significantly improve tuner performance during online tuning or iterative kernel
-      * running with TuningManipulator. Default cache size is 10.
-      * @param capacity Controls kernel cache capacity. If zero, kernel cache is completely disabled.
-      */
     void setKernelCacheCapacity(const size_t capacity);
 
-    /** @fn void printComputeAPIInfo(std::ostream& outputTarget) const
-      * Prints basic information about available platforms and devices to specified output stream. Also prints indices assigned to them
-      * by Fly framework.
-      * @param outputTarget Location where the information will be printed.
-      */
+   
     void printComputeAPIInfo(std::ostream& outputTarget) const;
 
-    /** @fn std::vector<PlatformInfo> getPlatformInfo() const
-      * Retrieves detailed information about all available platforms (eg. platform name, vendor). See PlatformInfo for more information.
-      * @return Information about all available platforms.
-      */
+  
     std::vector<PlatformInfo> getPlatformInfo() const;
 
-    /** @fn std::vector<DeviceInfo> getDeviceInfo(const PlatformIndex platform) const
-      * Retrieves detailed information about all available devices (eg. device name, memory capacity) on specified platform. See DeviceInfo
-      * for more information.
-      * @param platform Index of platform for which the device information will be retrieved.
-      * @return Information about all available devices on specified platform.
-      */
+   
     std::vector<DeviceInfo> getDeviceInfo(const PlatformIndex platform) const;
 
-    /** @fn DeviceInfo getCurrentDeviceInfo() const
-      * Retrieves detailed information about device (eg. device name, memory capacity) used by the tuner. See DeviceInfo for more information.
-      * @return Information about device used by the tuner.
-      */
+    
     DeviceInfo getCurrentDeviceInfo() const;
 
-    /** @fn void setAutomaticGlobalSizeCorrection(const bool flag)
-      * Toggles automatic correction for global size, which ensures that global size in each dimension is always a multiple of local size in
-      * corresponding dimension. Performs a roundup to the nearest higher multiple. Automatic global size correction is disabled by default.
-      * @param flag If true, automatic global size correction will be enabled. It will be disabled otherwise.
-      */
+   
     void setAutomaticGlobalSizeCorrection(const bool flag);
 
-    /** @fn void setGlobalSizeType(const GlobalSizeType type)
-      * Sets global size specification type to specified compute API style. In OpenCL, NDrange size is specified as number of work-items in
-      * a work-group multiplied by number of work-groups. In CUDA, grid size is specified as number of blocks. This method makes it possible to use
-      * OpenCL style in CUDA and vice versa. Default global size type is the one corresponding to compute API of the tuner.
-      * @param type Global size type which will be set for tuner. See ::GlobalSizeType for more information.
-      */
+   
     void setGlobalSizeType(const GlobalSizeType type);
 
-     /** @fn static void setLoggingLevel(const LoggingLevel level)
-      * Sets logging level for tuner. Default logging level is info.
-      * @param level Logging level which will be used by tuner. See ::LoggingLevel for more information.
-      */
     static void setLoggingLevel(const LoggingLevel level);
 
-    /** @fn static void setLoggingTarget(std::ostream& outputTarget)
-      * Sets the target for info messages logging to specified output stream. Default logging target is `std::clog`.
-      * @param outputTarget Location where tuner info messages will be printed.
-      */
+  
     static void setLoggingTarget(std::ostream& outputTarget);
 
-    /** @fn static void setLoggingTarget(const std::string& filePath)
-      * Sets the target for info messages logging to specified file. Default logging target is `std::clog`.
-      * @param filePath Path to file where tuner info messages will printed.
-      */
     static void setLoggingTarget(const std::string& filePath);
 
 private:

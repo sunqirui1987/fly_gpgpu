@@ -201,33 +201,6 @@ ComputationResult TunerCore::runKernel(const KernelId id, const std::vector<Para
 }
 
 
-void TunerCore::setPrintingTimeUnit(const TimeUnit unit)
-{
-    kernelRunner->setTimeUnit(unit);
-    resultPrinter.setTimeUnit(unit);
-}
-
-void TunerCore::setInvalidResultPrinting(const bool flag)
-{
-    resultPrinter.setInvalidResultPrinting(flag);
-}
-
-void TunerCore::printResult(const KernelId id, std::ostream& outputTarget, const PrintFormat format) const
-{
-    resultPrinter.printResult(id, outputTarget, format);
-}
-
-void TunerCore::printResult(const KernelId id, const std::string& filePath, const PrintFormat format) const
-{
-    std::ofstream outputFile(filePath);
-
-    if (!outputFile.is_open())
-    {
-        throw std::runtime_error(std::string("Unable to open file: ") + filePath);
-    }
-
-    resultPrinter.printResult(id, outputFile, format);
-}
 
 void TunerCore::setCompilerOptions(const std::string& options)
 {

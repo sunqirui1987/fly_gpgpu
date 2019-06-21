@@ -51,8 +51,6 @@
     <ClCompile Include="..\..\fly\tuning_runner\kernel_runner.cpp" />
     <ClCompile Include="..\..\fly\utility\fly_utility.cpp" />
     <ClCompile Include="..\..\fly\utility\logger.cpp" />
-    <ClCompile Include="..\..\fly\utility\result_loader.cpp" />
-    <ClCompile Include="..\..\fly\utility\result_printer.cpp" />
     <ClCompile Include="..\..\fly\utility\timer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -130,12 +128,8 @@
     <ClInclude Include="..\..\fly\enum\modifier_action.h" />
     <ClInclude Include="..\..\fly\enum\modifier_dimension.h" />
     <ClInclude Include="..\..\fly\enum\modifier_type.h" />
-    <ClInclude Include="..\..\fly\enum\print_format.h" />
     <ClInclude Include="..\..\fly\enum\profiling_counter_type.h" />
-    <ClInclude Include="..\..\fly\enum\search_method.h" />
     <ClInclude Include="..\..\fly\enum\time_unit.h" />
-    <ClInclude Include="..\..\fly\enum\validation_method.h" />
-    <ClInclude Include="..\..\fly\enum\validation_mode.h" />
     <ClInclude Include="..\..\fly\fly_platform.h" />
     <ClInclude Include="..\..\fly\fly_types.h" />
     <ClInclude Include="..\..\fly\half.h" />
@@ -153,8 +147,6 @@
     <ClInclude Include="..\..\fly\tuning_runner\kernel_runner.h" />
     <ClInclude Include="..\..\fly\utility\fly_utility.h" />
     <ClInclude Include="..\..\fly\utility\logger.h" />
-    <ClInclude Include="..\..\fly\utility\result_loader.h" />
-    <ClInclude Include="..\..\fly\utility\result_printer.h" />
     <ClInclude Include="..\..\fly\utility\timer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
